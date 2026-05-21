@@ -130,7 +130,7 @@
     "href": "index.html#lectures",
     "title": "Probability & Statistics for Data Science",
     "section": "Lectures",
-    "text": "Lectures\n\n\n\nLecture 01\n\n\nIntroduction to Probability\n\n\nSample spaces, events, axioms of probability, and counting principles.\n\n\n\n\nLecture 02\n\n\nRandom Variables\n\n\nDiscrete & continuous RVs, PMF, PDF, CDF, expectation & variance.\n\n\n\n\nLecture 03\n\n\nKey Distributions\n\n\nBinomial, Poisson, Normal, and Exponential families for data science.\n\n\n\n\n\nHow to build:\nquarto add Data-Wise/dtslides   # first time only\nquarto render                   # build the full website"
+    "text": "Lectures\n\n\n\nChapter 01\n\n\nIntroduction to Statistics\n\n\nSample spaces, events, axioms of probability, and counting principles.\n\n\n\n\nLecture 02\n\n\nRandom Variables\n\n\nDiscrete & continuous RVs, PMF, PDF, CDF, expectation & variance.\n\n\n\n\nChapter 03\n\n\nKey Distributions\n\n\nBinomial, Poisson, Normal, and Exponential families for data science.\n\n\n\n\n\nHow to build:\nquarto add Data-Wise/dtslides   # first time only\nquarto render                   # build the full website"
   },
   {
     "objectID": "slides/Ch01.html#what-is-statistics",
