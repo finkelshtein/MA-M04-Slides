@@ -8,8 +8,8 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
   <title>Probability &amp; Statistics for Data Science – Key Distributions</title>
@@ -100,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b5231298e24bf61ce18e9358c9f8c47f.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e7fae955c581777a40040bc55438a75a.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -196,29 +196,29 @@
     }
   </style>
   <style>
-  .Theorem {
-    --color1: #b1b4e733;
-    --color2: #b1b4e7;
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
   }
   .Definition {
     --color1: #CC191433;
     --color2: #CC1914;
   }
+  .Corollary {
+    --color1: #c0c0c0;
+    --color2: #808080;
+  }
+  .Theorem {
+    --color1: #b1b4e733;
+    --color2: #b1b4e7;
+  }
   .Remark {
     --color1: #00A04733;
     --color2: #00A047;
   }
-  .Note {
-    --color1: #70421433;
-    --color2: #704214;
-  }
   .Example {
     --color1: #e7b1b433;
     --color2: #e7b1b4;
-  }
-  .Corollary {
-    --color1: #c0c0c0;
-    --color2: #808080;
   }
   </style>
 </head>
@@ -513,7 +513,7 @@ sample means are approximately Normal regardless of the population distribution.
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -525,7 +525,7 @@ sample means are approximately Normal regardless of the population distribution.
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -574,7 +574,7 @@ sample means are approximately Normal regardless of the population distribution.
         center: false,
 
         // Enables touch navigation on devices with touch input
-        touch: true,
+        touch: false,
 
         // Loop the presentation
         loop: false,
