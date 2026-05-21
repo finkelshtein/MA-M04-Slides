@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -7,8 +8,8 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
   <title>Probability &amp; Statistics for Data Science – Random Variables</title>
@@ -33,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8b86b48c1e77689ef4fcc026fe13e8d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b5231298e24bf61ce18e9358c9f8c47f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,29 +130,29 @@
     }
   </style>
   <style>
-  .Example {
-    --color1: #e7b1b433;
-    --color2: #8c323633;
-  }
-  .Theorem {
-    --color1: #b1b4e733;
-    --color2: #3038b033;
-  }
-  .Note {
-    --color1: #70421433;
-    --color2: #331e0933;
-  }
-  .Definition {
-    --color1: #CC191433;
-    --color2: #63090733;
+  .Remark {
+    --color1: #00A04733;
+    --color2: #00A047;
   }
   .Corollary {
     --color1: #c0c0c0;
     --color2: #808080;
   }
-  .Remark {
-    --color1: #00A04733;
-    --color2: #01572733;
+  .Example {
+    --color1: #e7b1b433;
+    --color2: #e7b1b4;
+  }
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
+  }
+  .Definition {
+    --color1: #CC191433;
+    --color2: #CC1914;
+  }
+  .Theorem {
+    --color1: #b1b4e733;
+    --color2: #b1b4e7;
   }
   </style>
 </head>
@@ -568,7 +569,7 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -600,6 +601,68 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         tabsets.forEach(function(tabset) {
           const tabby = new Tabby('#' + tabset.id);
         });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
             var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -700,21 +763,6 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         }
       });
       </script>
-    <script>
-    (function() {
-      function toggleFooter() {
-        var f = document.querySelector(".reveal > .footer");
-        if (!f || typeof Reveal === "undefined") return;
-        var i = Reveal.getIndices();
-        f.style.display = (i.h === 0 && i.v === 0) ? "none" : "block";
-      }
-      if (typeof Reveal !== "undefined") {
-        Reveal.on("slidechanged", toggleFooter);
-        Reveal.on("ready", toggleFooter);
-        if (Reveal.isReady()) toggleFooter();
-      }
-    })();
-    </script>
     
 
 </body></html>

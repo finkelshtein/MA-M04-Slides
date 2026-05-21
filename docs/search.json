@@ -1,119 +1,119 @@
 [
   {
-    "objectID": "slides/lecture02.html#random-variables",
-    "href": "slides/lecture02.html#random-variables",
+    "objectID": "slides/Ch02.html#random-variables",
+    "href": "slides/Ch02.html#random-variables",
     "title": "Random Variables",
     "section": "0.1 Random Variables",
     "text": "0.1 Random Variables"
   },
   {
-    "objectID": "slides/lecture02.html#what-is-a-random-variable",
-    "href": "slides/lecture02.html#what-is-a-random-variable",
+    "objectID": "slides/Ch02.html#what-is-a-random-variable",
+    "href": "slides/Ch02.html#what-is-a-random-variable",
     "title": "Random Variables",
     "section": "0.2 What is a Random Variable?",
     "text": "0.2 What is a Random Variable?\nA random variable (RV) \\(X\\) is a function: \\[X : \\Omega \\longrightarrow \\mathbb{R}\\]\nIt maps each outcome to a real number.\n\nRoll two dice. Let $X = $ sum of faces.\n\\(X\\) takes values \\(2, 3, \\ldots, 12\\) — each with a different probability.\n\n\nRVs allow us to do algebra on probabilistic quantities."
   },
   {
-    "objectID": "slides/lecture02.html#discrete-vs-continuous",
-    "href": "slides/lecture02.html#discrete-vs-continuous",
+    "objectID": "slides/Ch02.html#discrete-vs-continuous",
+    "href": "slides/Ch02.html#discrete-vs-continuous",
     "title": "Random Variables",
     "section": "0.3 Discrete vs Continuous",
     "text": "0.3 Discrete vs Continuous\n\n\n\n\nDiscrete\nContinuous\n\n\n\n\nValues\nCountable set\nInterval in \\(\\mathbb{R}\\)\n\n\nSummary\nPMF \\(p(x)\\)\nPDF \\(f(x)\\)\n\n\nNormalisation\n\\(\\sum_x p(x) = 1\\)\n\\(\\int f(x)\\,dx = 1\\)\n\n\nExamples\nCounts, categories\nHeights, times"
   },
   {
-    "objectID": "slides/lecture02.html#probability-mass-function-pmf",
-    "href": "slides/lecture02.html#probability-mass-function-pmf",
+    "objectID": "slides/Ch02.html#probability-mass-function-pmf",
+    "href": "slides/Ch02.html#probability-mass-function-pmf",
     "title": "Random Variables",
     "section": "0.4 Probability Mass Function (PMF)",
     "text": "0.4 Probability Mass Function (PMF)\nFor a discrete RV: \\(p(x) = P(X = x)\\)\nRequirements:\n\n\\(p(x) \\ge 0\\) for all \\(x\\)\n\\(\\sum_{x} p(x) = 1\\)\n\n\nFair die: \\(p(x) = \\tfrac{1}{6}\\) for \\(x \\in \\{1,\\ldots,6\\}\\), zero elsewhere."
   },
   {
-    "objectID": "slides/lecture02.html#probability-density-function-pdf",
-    "href": "slides/lecture02.html#probability-density-function-pdf",
+    "objectID": "slides/Ch02.html#probability-density-function-pdf",
+    "href": "slides/Ch02.html#probability-density-function-pdf",
     "title": "Random Variables",
     "section": "0.5 Probability Density Function (PDF)",
     "text": "0.5 Probability Density Function (PDF)\nFor a continuous RV, \\(P(X = x) = 0\\) for any single \\(x\\).\nInstead we use the PDF \\(f(x)\\): \\[P(a \\le X \\le b) = \\int_a^b f(x)\\,dx\\]\nRequirements:\n\n\\(f(x) \\ge 0\\)\n\n\\(\\int_{-\\infty}^{\\infty} f(x)\\,dx = 1\\)"
   },
   {
-    "objectID": "slides/lecture02.html#cumulative-distribution-function",
-    "href": "slides/lecture02.html#cumulative-distribution-function",
+    "objectID": "slides/Ch02.html#cumulative-distribution-function",
+    "href": "slides/Ch02.html#cumulative-distribution-function",
     "title": "Random Variables",
     "section": "0.6 Cumulative Distribution Function",
     "text": "0.6 Cumulative Distribution Function\nThe CDF works for both discrete and continuous RVs:\n\\[F(x) = P(X \\le x)\\]\nKey properties:\n\nNon-decreasing: \\(x_1 &lt; x_2 \\Rightarrow F(x_1) \\le F(x_2)\\)\nRight-continuous\n\\(\\lim_{x \\to -\\infty} F(x) = 0\\), \\(\\lim_{x \\to +\\infty} F(x) = 1\\)\n\nFor continuous RVs: \\(f(x) = F'(x)\\)"
   },
   {
-    "objectID": "slides/lecture02.html#expectation",
-    "href": "slides/lecture02.html#expectation",
+    "objectID": "slides/Ch02.html#expectation",
+    "href": "slides/Ch02.html#expectation",
     "title": "Random Variables",
     "section": "0.7 Expectation",
     "text": "0.7 Expectation"
   },
   {
-    "objectID": "slides/lecture02.html#expectation-mean",
-    "href": "slides/lecture02.html#expectation-mean",
+    "objectID": "slides/Ch02.html#expectation-mean",
+    "href": "slides/Ch02.html#expectation-mean",
     "title": "Random Variables",
     "section": "0.8 Expectation (Mean)",
     "text": "0.8 Expectation (Mean)\nThe expected value (mean) of \\(X\\):\n\\[\\mu = E[X] = \\begin{cases} \\displaystyle\\sum_x x\\,p(x) & \\text{discrete} \\\\[8pt] \\displaystyle\\int_{-\\infty}^{\\infty} x\\,f(x)\\,dx & \\text{continuous} \\end{cases}\\]\n\n\\(E[X]\\) is the long-run average — it may not be an attainable value of \\(X\\)."
   },
   {
-    "objectID": "slides/lecture02.html#linearity-of-expectation",
-    "href": "slides/lecture02.html#linearity-of-expectation",
+    "objectID": "slides/Ch02.html#linearity-of-expectation",
+    "href": "slides/Ch02.html#linearity-of-expectation",
     "title": "Random Variables",
     "section": "0.9 Linearity of Expectation",
     "text": "0.9 Linearity of Expectation\nFor constants \\(a, b\\) and RVs \\(X, Y\\):\n\\[E[aX + b] = a\\,E[X] + b\\]\n\\[E[X + Y] = E[X] + E[Y] \\quad (\\text{always!})\\]\n\n\n\n\n\n\nNote\n\n\nThe second equality holds regardless of dependence between \\(X\\) and \\(Y\\).\nThis makes expectation extraordinarily useful."
   },
   {
-    "objectID": "slides/lecture02.html#variance-standard-deviation",
-    "href": "slides/lecture02.html#variance-standard-deviation",
+    "objectID": "slides/Ch02.html#variance-standard-deviation",
+    "href": "slides/Ch02.html#variance-standard-deviation",
     "title": "Random Variables",
     "section": "0.10 Variance & Standard Deviation",
     "text": "0.10 Variance & Standard Deviation\nVariance measures spread around the mean:\n\\[\\operatorname{Var}(X) = E\\!\\left[(X - \\mu)^2\\right] = E[X^2] - \\mu^2\\]\nStandard deviation: \\(\\sigma = \\sqrt{\\operatorname{Var}(X)}\\) (same units as \\(X\\))\nUseful identity: \\[\\operatorname{Var}(aX + b) = a^2\\,\\operatorname{Var}(X)\\]"
   },
   {
-    "objectID": "slides/lecture02.html#higher-moments",
-    "href": "slides/lecture02.html#higher-moments",
+    "objectID": "slides/Ch02.html#higher-moments",
+    "href": "slides/Ch02.html#higher-moments",
     "title": "Random Variables",
     "section": "0.11 Higher Moments",
     "text": "0.11 Higher Moments\nThe \\(k\\)-th moment of \\(X\\): \\(E[X^k]\\)\nThe \\(k\\)-th central moment: \\(E[(X - \\mu)^k]\\)\n\n\n\nMoment\nSymbol\nMeasures\n\n\n\n\n1st central\n\\(0\\)\n(always zero)\n\n\n2nd central\n\\(\\sigma^2\\)\nSpread\n\n\n3rd standardised\nSkewness \\(\\gamma_1\\)\nAsymmetry\n\n\n4th standardised\nKurtosis \\(\\gamma_2\\)\nTail heaviness\n\n\n\n\nData scientists use skewness and kurtosis to detect non-Normality."
   },
   {
-    "objectID": "slides/lecture02.html#moment-generating-functions",
-    "href": "slides/lecture02.html#moment-generating-functions",
+    "objectID": "slides/Ch02.html#moment-generating-functions",
+    "href": "slides/Ch02.html#moment-generating-functions",
     "title": "Random Variables",
     "section": "0.12 Moment Generating Functions",
     "text": "0.12 Moment Generating Functions\nThe MGF of \\(X\\): \\[M_X(t) = E[e^{tX}]\\]\nWhy useful?\n\n\\(E[X^k] = M_X^{(k)}(0)\\) — moments by differentiation\nIf two RVs share an MGF, they share a distribution\nSums of independent RVs: \\(M_{X+Y}(t) = M_X(t)\\,M_Y(t)\\)"
   },
   {
-    "objectID": "slides/lecture02.html#joint-distributions",
-    "href": "slides/lecture02.html#joint-distributions",
+    "objectID": "slides/Ch02.html#joint-distributions",
+    "href": "slides/Ch02.html#joint-distributions",
     "title": "Random Variables",
     "section": "0.13 Joint Distributions",
     "text": "0.13 Joint Distributions"
   },
   {
-    "objectID": "slides/lecture02.html#joint-marginal-distributions",
-    "href": "slides/lecture02.html#joint-marginal-distributions",
+    "objectID": "slides/Ch02.html#joint-marginal-distributions",
+    "href": "slides/Ch02.html#joint-marginal-distributions",
     "title": "Random Variables",
     "section": "0.14 Joint & Marginal Distributions",
     "text": "0.14 Joint & Marginal Distributions\nFor two RVs \\((X, Y)\\):\nJoint PMF/PDF: \\(p(x, y)\\) or \\(f(x, y)\\)\nMarginal distributions by summing/integrating out: \\[p_X(x) = \\sum_y p(x,y), \\qquad f_X(x) = \\int f(x,y)\\,dy\\]\nConditional distribution: \\[f_{Y \\mid X}(y \\mid x) = \\frac{f(x,y)}{f_X(x)}\\]"
   },
   {
-    "objectID": "slides/lecture02.html#covariance-correlation",
-    "href": "slides/lecture02.html#covariance-correlation",
+    "objectID": "slides/Ch02.html#covariance-correlation",
+    "href": "slides/Ch02.html#covariance-correlation",
     "title": "Random Variables",
     "section": "0.15 Covariance & Correlation",
     "text": "0.15 Covariance & Correlation\n\\[\\operatorname{Cov}(X, Y) = E[(X-\\mu_X)(Y-\\mu_Y)] = E[XY] - \\mu_X\\mu_Y\\]\nPearson correlation (dimensionless, \\(\\in [-1, 1]\\)): \\[\\rho_{XY} = \\frac{\\operatorname{Cov}(X,Y)}{\\sigma_X\\,\\sigma_Y}\\]\n\nIf \\(\\rho_{XY} = 0\\), are \\(X\\) and \\(Y\\) independent? Not necessarily!\nIndependence \\(\\Rightarrow\\) zero correlation, but not vice versa."
   },
   {
-    "objectID": "slides/lecture02.html#key-takeaways",
-    "href": "slides/lecture02.html#key-takeaways",
+    "objectID": "slides/Ch02.html#key-takeaways",
+    "href": "slides/Ch02.html#key-takeaways",
     "title": "Random Variables",
     "section": "0.16 Key Takeaways",
     "text": "0.16 Key Takeaways\n\nA RV maps outcomes to real numbers; described by PMF/PDF and CDF\nExpectation is a linear operator — powerfully simple\nVariance measures spread; standard deviation restores units\nCovariance captures linear association; correlation standardises it"
   },
   {
-    "objectID": "slides/lecture02.html#next-lecture",
-    "href": "slides/lecture02.html#next-lecture",
+    "objectID": "slides/Ch02.html#next-lecture",
+    "href": "slides/Ch02.html#next-lecture",
     "title": "Random Variables",
     "section": "0.17 Next Lecture",
     "text": "0.17 Next Lecture\nLecture 03 · Key Distributions\n\nBernoulli, Binomial, and Poisson (discrete)\nUniform, Normal, and Exponential (continuous)\nRelationships and data-science applications"
@@ -131,139 +131,6 @@
     "title": "Probability & Statistics for Data Science",
     "section": "Lectures",
     "text": "Lectures\n\n\n\nLecture 01\n\n\nIntroduction to Probability\n\n\nSample spaces, events, axioms of probability, and counting principles.\n\n\n\n\nLecture 02\n\n\nRandom Variables\n\n\nDiscrete & continuous RVs, PMF, PDF, CDF, expectation & variance.\n\n\n\n\nLecture 03\n\n\nKey Distributions\n\n\nBinomial, Poisson, Normal, and Exponential families for data science.\n\n\n\n\n\nHow to build:\nquarto add Data-Wise/dtslides   # first time only\nquarto render                   # build the full website"
-  },
-  {
-    "objectID": "slides/lecture01.html#what-is-statistics",
-    "href": "slides/lecture01.html#what-is-statistics",
-    "title": "Probability and Statistics for Data Science",
-    "section": "What is Statistics",
-    "text": "What is Statistics\nStatistics is the collection, analysis, and interpretation of data.\n\nData can be:\n\nqualitative, e.g. \n\nhair colour,\nmake of car, etc.\n\nquantitative (numerical).\n\n\n\nData can also be:\n\ndiscrete or\ncontinuous,\n\n\n\nwhere discrete data is distinct, e.g. hair colour and continuous data takes a range of values, e.g. height."
-  },
-  {
-    "objectID": "slides/lecture01.html#main-notions",
-    "href": "slides/lecture01.html#main-notions",
-    "title": "Probability and Statistics for Data Science",
-    "section": "Main notions",
-    "text": "Main notions\nOften we are interested in studying a group that is too large to observe, for example the average height of adults in the UK, and we have to resort to using only a few members of that group to infer conclusions about them. As you can guess, this is not easy to get right. After all, we are trying to represent a population with a sample that may not be representative.\n\n1.3 Definition\nA population is the collection of objects or people under discussion, which can be both finite and infinite.\n\n\n\nExamples of populations could be “all Swansea University students”, “all adults in the UK”, or “all Golden Retrievers in Scotland”.\n\n\nIf we are going to infer attributes about a population based on a sample, it’s important the sample be as random as possible so we do not skew our conclusions, i.e. we want to avoid bias."
-  },
-  {
-    "objectID": "slides/lecture01.html#descriptive-statistics",
-    "href": "slides/lecture01.html#descriptive-statistics",
-    "title": "Probability and Statistics for Data Science",
-    "section": "Descriptive statistics",
-    "text": "Descriptive statistics\nWe now look at some descriptive statistics in more detail, beginning with measures of location.\n\n1.7 Definition\nThe sample mean, denoted by \\(\\bar{x}\\), of a sample of observations \\(x_1, x_2, \\ldots, x_n\\) is given by \\[\n\\bar{x}=\\frac{1}{n} \\sum_{i=1}^n x_i=\\frac{x_1+x_2+\\cdots+x_n}{n}.\n\\]\nAnalogously, the population mean, denoted by \\(\\mu\\), of a population of observations \\(x_1, \\ldots, x_N\\) is given by \\[\n\\mu=\\frac{1}{N} \\sum_{i=1}^N x_i=\\frac{x_1+x_2+\\cdots+x_N}{N}.\n\\]\n\n\n\nExample 1.1  \n1.8 Example\nEight people from the general UK population were polled on the number of pets they own. The results are shown below: \\[\n1, 3, 2, 5, 7, 0, 2, 3.\n\\] These are the \\(x_1, \\ldots, x_8\\) terms as in the previous definition of the sample mean.Therefore, the sample mean is then given by: \\[\n\\bar{x}=\\frac{1+3+2+5+7+0+2+3}{8}=\\frac{23}{8}=2.875.\n\\]\n\n\n\nExample 1.2  \n1.9 Example\nWe now modify the situation of the previous example to where the population is now students studying a certain Mathematics module at Swansea University. The values for the whole population are as follows: \\[\n2,1,3,4,2,6,4,0,1,1,3,3,4,1,1,5,5,2,1,3.\n\\]\nThe population mean is then given by: \\[\n\\begin{aligned}\n\\mu&=\\frac{2+1+3+4+2+6+4+0+1+1+3+3+4+1+1+5+5+2+1+3}{20}\\\\\n&=\\frac{52}{20}=2.6.\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/lecture03.html#discrete-distributions",
-    "href": "slides/lecture03.html#discrete-distributions",
-    "title": "Key Distributions",
-    "section": "0.1 Discrete Distributions",
-    "text": "0.1 Discrete Distributions"
-  },
-  {
-    "objectID": "slides/lecture03.html#bernoulli-distribution",
-    "href": "slides/lecture03.html#bernoulli-distribution",
-    "title": "Key Distributions",
-    "section": "0.2 Bernoulli Distribution",
-    "text": "0.2 Bernoulli Distribution\nThe simplest RV: a single binary trial.\n\\[X \\sim \\mathrm{Bernoulli}(p)\\]\n\n\n\nPMF\n\\(p(1) = p,\\quad p(0) = 1-p\\)\n\n\nMean\n\\(p\\)\n\n\nVariance\n\\(p(1-p)\\)\n\n\n\n\nEmail spam / not-spam; customer churn / retained; coin flip."
-  },
-  {
-    "objectID": "slides/lecture03.html#binomial-distribution",
-    "href": "slides/lecture03.html#binomial-distribution",
-    "title": "Key Distributions",
-    "section": "0.3 Binomial Distribution",
-    "text": "0.3 Binomial Distribution\n\\(n\\) independent Bernoulli\\((p)\\) trials — count the successes.\n\\[X \\sim \\mathrm{Bin}(n, p)\\]\n\\[p(k) = \\binom{n}{k} p^k (1-p)^{n-k}, \\quad k = 0, 1, \\ldots, n\\]\n\n\n\nMean\n\\(np\\)\n\n\nVariance\n\\(np(1-p)\\)\n\n\n\n\nRule of thumb: for \\(n \\ge 30\\) and \\(p\\) not extreme, \\(\\mathrm{Bin}(n,p) \\approx \\mathcal{N}(np, np(1-p))\\)."
-  },
-  {
-    "objectID": "slides/lecture03.html#poisson-distribution",
-    "href": "slides/lecture03.html#poisson-distribution",
-    "title": "Key Distributions",
-    "section": "0.4 Poisson Distribution",
-    "text": "0.4 Poisson Distribution\nCounts of rare events in a fixed interval of time/space.\n\\[X \\sim \\mathrm{Poisson}(\\lambda), \\quad \\lambda &gt; 0\\]\n\\[p(k) = \\frac{e^{-\\lambda}\\lambda^k}{k!}, \\quad k = 0, 1, 2, \\ldots\\]\n\n\n\nMean\n\\(\\lambda\\)\n\n\nVariance\n\\(\\lambda\\) (mean = variance)\n\n\n\n\nServer requests per second; insurance claims per month; rare word counts in NLP."
-  },
-  {
-    "objectID": "slides/lecture03.html#poisson-as-a-binomial-limit",
-    "href": "slides/lecture03.html#poisson-as-a-binomial-limit",
-    "title": "Key Distributions",
-    "section": "0.5 Poisson as a Binomial Limit",
-    "text": "0.5 Poisson as a Binomial Limit\nLet \\(n \\to \\infty\\), \\(p \\to 0\\), with \\(np = \\lambda\\) fixed.\n\\[\\binom{n}{k} p^k(1-p)^{n-k} \\xrightarrow{n\\to\\infty} \\frac{e^{-\\lambda}\\lambda^k}{k!}\\]\n\nUse Poisson when events are rare and the number of trials is large (and possibly unknown).\nClassic heuristic: \\(n \\ge 20\\) and \\(p \\le 0.05\\)."
-  },
-  {
-    "objectID": "slides/lecture03.html#geometric-negative-binomial",
-    "href": "slides/lecture03.html#geometric-negative-binomial",
-    "title": "Key Distributions",
-    "section": "0.6 Geometric & Negative Binomial",
-    "text": "0.6 Geometric & Negative Binomial\nGeometric — trials until first success: \\[P(X = k) = (1-p)^{k-1} p, \\quad k = 1,2,\\ldots\\] \\(E[X] = 1/p\\), \\(\\operatorname{Var}(X) = (1-p)/p^2\\)\nNegative Binomial — trials until \\(r\\)-th success: \\[P(X = k) = \\binom{k-1}{r-1} p^r (1-p)^{k-r}\\]\n\nNegative Binomial is widely used in genomics and NLP for overdispersed count data\n(variance &gt; mean)."
-  },
-  {
-    "objectID": "slides/lecture03.html#continuous-distributions",
-    "href": "slides/lecture03.html#continuous-distributions",
-    "title": "Key Distributions",
-    "section": "0.7 Continuous Distributions",
-    "text": "0.7 Continuous Distributions"
-  },
-  {
-    "objectID": "slides/lecture03.html#uniform-distribution",
-    "href": "slides/lecture03.html#uniform-distribution",
-    "title": "Key Distributions",
-    "section": "0.8 Uniform Distribution",
-    "text": "0.8 Uniform Distribution\nAll values in \\([a, b]\\) are equally likely.\n\\[X \\sim \\mathrm{Uniform}(a, b)\\]\n\\[f(x) = \\frac{1}{b-a}, \\quad x \\in [a,b]\\]\n\n\n\nMean\n\\((a+b)/2\\)\n\n\nVariance\n\\((b-a)^2/12\\)\n\n\n\n\nRandom number generators; random initialisation of neural-network weights."
-  },
-  {
-    "objectID": "slides/lecture03.html#normal-gaussian-distribution",
-    "href": "slides/lecture03.html#normal-gaussian-distribution",
-    "title": "Key Distributions",
-    "section": "0.9 Normal (Gaussian) Distribution",
-    "text": "0.9 Normal (Gaussian) Distribution\nThe most important distribution in statistics.\n\\[X \\sim \\mathcal{N}(\\mu, \\sigma^2)\\]\n\\[f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\!\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\\]\nProperties:\n\nSymmetric, bell-shaped about \\(\\mu\\)\n\\(68\\text{–}95\\text{–}99.7\\) rule (\\(1\\sigma\\), \\(2\\sigma\\), \\(3\\sigma\\))\nClosed under linear transformations & sums of independent copies"
-  },
-  {
-    "objectID": "slides/lecture03.html#the-standard-normal",
-    "href": "slides/lecture03.html#the-standard-normal",
-    "title": "Key Distributions",
-    "section": "0.10 The Standard Normal",
-    "text": "0.10 The Standard Normal\n\\[Z = \\frac{X - \\mu}{\\sigma} \\sim \\mathcal{N}(0, 1)\\]\nThis standardisation lets us use a single table / function for all Normals.\nfrom scipy.stats import norm\n\n# P(Z &lt;= 1.96)\nnorm.cdf(1.96)          # ≈ 0.975\n\n# 95th percentile\nnorm.ppf(0.95)          # ≈ 1.645\n\n# P(-1.96 &lt;= Z &lt;= 1.96)\nnorm.cdf(1.96) - norm.cdf(-1.96)   # ≈ 0.95"
-  },
-  {
-    "objectID": "slides/lecture03.html#central-limit-theorem",
-    "href": "slides/lecture03.html#central-limit-theorem",
-    "title": "Key Distributions",
-    "section": "0.11 Central Limit Theorem",
-    "text": "0.11 Central Limit Theorem\nCLT: Let \\(X_1, \\ldots, X_n\\) be i.i.d. with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\n\\[\\bar X_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\xrightarrow{d} \\mathcal{N}\\!\\left(\\mu,\\, \\frac{\\sigma^2}{n}\\right) \\quad \\text{as } n \\to \\infty\\]\n\nThe CLT explains why the Normal distribution appears everywhere in practice —\nsample means are approximately Normal regardless of the population distribution."
-  },
-  {
-    "objectID": "slides/lecture03.html#exponential-distribution",
-    "href": "slides/lecture03.html#exponential-distribution",
-    "title": "Key Distributions",
-    "section": "0.12 Exponential Distribution",
-    "text": "0.12 Exponential Distribution\nTime between events in a Poisson process.\n\\[X \\sim \\mathrm{Exp}(\\lambda)\\]\n\\[f(x) = \\lambda e^{-\\lambda x}, \\quad x \\ge 0\\]\n\n\n\nMean\n\\(1/\\lambda\\)\n\n\nVariance\n\\(1/\\lambda^2\\)\n\n\nMemoryless\n\\(P(X &gt; s+t \\mid X &gt; s) = P(X &gt; t)\\)"
-  },
-  {
-    "objectID": "slides/lecture03.html#gamma-beta-distributions",
-    "href": "slides/lecture03.html#gamma-beta-distributions",
-    "title": "Key Distributions",
-    "section": "0.13 Gamma & Beta Distributions",
-    "text": "0.13 Gamma & Beta Distributions\nGamma — generalises Exponential to \\(\\alpha\\) events:\n\\[X \\sim \\mathrm{Gamma}(\\alpha, \\beta):\\quad E[X] = \\alpha/\\beta,\\quad \\operatorname{Var}(X) = \\alpha/\\beta^2\\]\nBeta — models probabilities (support \\([0,1]\\)):\n\\[X \\sim \\mathrm{Beta}(\\alpha, \\beta):\\quad E[X] = \\frac{\\alpha}{\\alpha+\\beta}\\]\n\nBeta is the conjugate prior for a Bernoulli likelihood — the backbone of Bayesian A/B testing."
-  },
-  {
-    "objectID": "slides/lecture03.html#comparing-the-families",
-    "href": "slides/lecture03.html#comparing-the-families",
-    "title": "Key Distributions",
-    "section": "0.14 Comparing the Families",
-    "text": "0.14 Comparing the Families\n\n\n\n\n\n\n\n\nDistribution\nSupport\nCanonical use in DS\n\n\n\n\nBernoulli / Binomial\n\\(\\{0,1\\}\\) / \\(\\mathbb{Z}_{\\ge 0}\\)\nClassification labels, click-through\n\n\nPoisson\n\\(\\mathbb{Z}_{\\ge 0}\\)\nEvent counts, anomaly detection\n\n\nNormal\n\\(\\mathbb{R}\\)\nRegression targets, noise, CLT\n\n\nExponential\n\\(\\mathbb{R}_{\\ge 0}\\)\nTime-to-event, survival analysis\n\n\nBeta\n\\([0,1]\\)\nBayesian inference on rates\n\n\nGamma\n\\(\\mathbb{R}_{\\ge 0}\\)\nWaiting times, Bayesian priors"
-  },
-  {
-    "objectID": "slides/lecture03.html#key-takeaways",
-    "href": "slides/lecture03.html#key-takeaways",
-    "title": "Key Distributions",
-    "section": "0.15 Key Takeaways",
-    "text": "0.15 Key Takeaways\n\nDiscrete: Bernoulli → Binomial → Poisson: each a natural extension of the last\nContinuous: Uniform, Normal, Exponential are the workhorse trio\nThe CLT ties sample means to the Normal distribution\nChoosing the right distribution means matching its support & shape to your data\nConjugate priors (Beta–Bernoulli, Gamma–Poisson) enable clean Bayesian updates"
-  },
-  {
-    "objectID": "slides/lecture03.html#whats-next",
-    "href": "slides/lecture03.html#whats-next",
-    "title": "Key Distributions",
-    "section": "0.16 What’s Next",
-    "text": "0.16 What’s Next\nUpcoming topics:\n\nStatistical Inference — point estimation, confidence intervals\nHypothesis testing and \\(p\\)-values\nMaximum Likelihood Estimation\nBayesian inference and posterior computation"
   },
   {
     "objectID": "slides/Ch01.html#what-is-statistics",
@@ -285,5 +152,117 @@
     "title": "Probability and Statistics for Data Science",
     "section": "Descriptive statistics",
     "text": "Descriptive statistics\nWe now look at some descriptive statistics in more detail, beginning with measures of location.\n\n1.7 Definition\nThe sample mean, denoted by \\(\\bar{x}\\), of a sample of observations \\(x_1, x_2, \\ldots, x_n\\) is given by \\[\n\\bar{x}=\\frac{1}{n} \\sum_{i=1}^n x_i=\\frac{x_1+x_2+\\cdots+x_n}{n}.\n\\]\nAnalogously, the population mean, denoted by \\(\\mu\\), of a population of observations \\(x_1, \\ldots, x_N\\) is given by \\[\n\\mu=\\frac{1}{N} \\sum_{i=1}^N x_i=\\frac{x_1+x_2+\\cdots+x_N}{N}.\n\\]\n\n\n\nExample 1.1  \n1.8 Example\nEight people from the general UK population were polled on the number of pets they own. The results are shown below: \\[\n1, 3, 2, 5, 7, 0, 2, 3.\n\\] These are the \\(x_1, \\ldots, x_8\\) terms as in the previous definition of the sample mean.Therefore, the sample mean is then given by: \\[\n\\bar{x}=\\frac{1+3+2+5+7+0+2+3}{8}=\\frac{23}{8}=2.875.\n\\]\n\n\n\nExample 1.2  \n1.9 Example\nWe now modify the situation of the previous example to where the population is now students studying a certain Mathematics module at Swansea University. The values for the whole population are as follows: \\[\n2,1,3,4,2,6,4,0,1,1,3,3,4,1,1,5,5,2,1,3.\n\\]\nThe population mean is then given by: \\[\n\\begin{aligned}\n\\mu&=\\frac{2+1+3+4+2+6+4+0+1+1+3+3+4+1+1+5+5+2+1+3}{20}\\\\\n&=\\frac{52}{20}=2.6.\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/Ch03.html#discrete-distributions",
+    "href": "slides/Ch03.html#discrete-distributions",
+    "title": "Key Distributions",
+    "section": "0.1 Discrete Distributions",
+    "text": "0.1 Discrete Distributions"
+  },
+  {
+    "objectID": "slides/Ch03.html#bernoulli-distribution",
+    "href": "slides/Ch03.html#bernoulli-distribution",
+    "title": "Key Distributions",
+    "section": "0.2 Bernoulli Distribution",
+    "text": "0.2 Bernoulli Distribution\nThe simplest RV: a single binary trial.\n\\[X \\sim \\mathrm{Bernoulli}(p)\\]\n\n\n\nPMF\n\\(p(1) = p,\\quad p(0) = 1-p\\)\n\n\nMean\n\\(p\\)\n\n\nVariance\n\\(p(1-p)\\)\n\n\n\n\nEmail spam / not-spam; customer churn / retained; coin flip."
+  },
+  {
+    "objectID": "slides/Ch03.html#binomial-distribution",
+    "href": "slides/Ch03.html#binomial-distribution",
+    "title": "Key Distributions",
+    "section": "0.3 Binomial Distribution",
+    "text": "0.3 Binomial Distribution\n\\(n\\) independent Bernoulli\\((p)\\) trials — count the successes.\n\\[X \\sim \\mathrm{Bin}(n, p)\\]\n\\[p(k) = \\binom{n}{k} p^k (1-p)^{n-k}, \\quad k = 0, 1, \\ldots, n\\]\n\n\n\nMean\n\\(np\\)\n\n\nVariance\n\\(np(1-p)\\)\n\n\n\n\nRule of thumb: for \\(n \\ge 30\\) and \\(p\\) not extreme, \\(\\mathrm{Bin}(n,p) \\approx \\mathcal{N}(np, np(1-p))\\)."
+  },
+  {
+    "objectID": "slides/Ch03.html#poisson-distribution",
+    "href": "slides/Ch03.html#poisson-distribution",
+    "title": "Key Distributions",
+    "section": "0.4 Poisson Distribution",
+    "text": "0.4 Poisson Distribution\nCounts of rare events in a fixed interval of time/space.\n\\[X \\sim \\mathrm{Poisson}(\\lambda), \\quad \\lambda &gt; 0\\]\n\\[p(k) = \\frac{e^{-\\lambda}\\lambda^k}{k!}, \\quad k = 0, 1, 2, \\ldots\\]\n\n\n\nMean\n\\(\\lambda\\)\n\n\nVariance\n\\(\\lambda\\) (mean = variance)\n\n\n\n\nServer requests per second; insurance claims per month; rare word counts in NLP."
+  },
+  {
+    "objectID": "slides/Ch03.html#poisson-as-a-binomial-limit",
+    "href": "slides/Ch03.html#poisson-as-a-binomial-limit",
+    "title": "Key Distributions",
+    "section": "0.5 Poisson as a Binomial Limit",
+    "text": "0.5 Poisson as a Binomial Limit\nLet \\(n \\to \\infty\\), \\(p \\to 0\\), with \\(np = \\lambda\\) fixed.\n\\[\\binom{n}{k} p^k(1-p)^{n-k} \\xrightarrow{n\\to\\infty} \\frac{e^{-\\lambda}\\lambda^k}{k!}\\]\n\nUse Poisson when events are rare and the number of trials is large (and possibly unknown).\nClassic heuristic: \\(n \\ge 20\\) and \\(p \\le 0.05\\)."
+  },
+  {
+    "objectID": "slides/Ch03.html#geometric-negative-binomial",
+    "href": "slides/Ch03.html#geometric-negative-binomial",
+    "title": "Key Distributions",
+    "section": "0.6 Geometric & Negative Binomial",
+    "text": "0.6 Geometric & Negative Binomial\nGeometric — trials until first success: \\[P(X = k) = (1-p)^{k-1} p, \\quad k = 1,2,\\ldots\\] \\(E[X] = 1/p\\), \\(\\operatorname{Var}(X) = (1-p)/p^2\\)\nNegative Binomial — trials until \\(r\\)-th success: \\[P(X = k) = \\binom{k-1}{r-1} p^r (1-p)^{k-r}\\]\n\nNegative Binomial is widely used in genomics and NLP for overdispersed count data\n(variance &gt; mean)."
+  },
+  {
+    "objectID": "slides/Ch03.html#continuous-distributions",
+    "href": "slides/Ch03.html#continuous-distributions",
+    "title": "Key Distributions",
+    "section": "0.7 Continuous Distributions",
+    "text": "0.7 Continuous Distributions"
+  },
+  {
+    "objectID": "slides/Ch03.html#uniform-distribution",
+    "href": "slides/Ch03.html#uniform-distribution",
+    "title": "Key Distributions",
+    "section": "0.8 Uniform Distribution",
+    "text": "0.8 Uniform Distribution\nAll values in \\([a, b]\\) are equally likely.\n\\[X \\sim \\mathrm{Uniform}(a, b)\\]\n\\[f(x) = \\frac{1}{b-a}, \\quad x \\in [a,b]\\]\n\n\n\nMean\n\\((a+b)/2\\)\n\n\nVariance\n\\((b-a)^2/12\\)\n\n\n\n\nRandom number generators; random initialisation of neural-network weights."
+  },
+  {
+    "objectID": "slides/Ch03.html#normal-gaussian-distribution",
+    "href": "slides/Ch03.html#normal-gaussian-distribution",
+    "title": "Key Distributions",
+    "section": "0.9 Normal (Gaussian) Distribution",
+    "text": "0.9 Normal (Gaussian) Distribution\nThe most important distribution in statistics.\n\\[X \\sim \\mathcal{N}(\\mu, \\sigma^2)\\]\n\\[f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\!\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\\]\nProperties:\n\nSymmetric, bell-shaped about \\(\\mu\\)\n\\(68\\text{–}95\\text{–}99.7\\) rule (\\(1\\sigma\\), \\(2\\sigma\\), \\(3\\sigma\\))\nClosed under linear transformations & sums of independent copies"
+  },
+  {
+    "objectID": "slides/Ch03.html#the-standard-normal",
+    "href": "slides/Ch03.html#the-standard-normal",
+    "title": "Key Distributions",
+    "section": "0.10 The Standard Normal",
+    "text": "0.10 The Standard Normal\n\\[Z = \\frac{X - \\mu}{\\sigma} \\sim \\mathcal{N}(0, 1)\\]\nThis standardisation lets us use a single table / function for all Normals.\nfrom scipy.stats import norm\n\n# P(Z &lt;= 1.96)\nnorm.cdf(1.96)          # ≈ 0.975\n\n# 95th percentile\nnorm.ppf(0.95)          # ≈ 1.645\n\n# P(-1.96 &lt;= Z &lt;= 1.96)\nnorm.cdf(1.96) - norm.cdf(-1.96)   # ≈ 0.95"
+  },
+  {
+    "objectID": "slides/Ch03.html#central-limit-theorem",
+    "href": "slides/Ch03.html#central-limit-theorem",
+    "title": "Key Distributions",
+    "section": "0.11 Central Limit Theorem",
+    "text": "0.11 Central Limit Theorem\nCLT: Let \\(X_1, \\ldots, X_n\\) be i.i.d. with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\n\\[\\bar X_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\xrightarrow{d} \\mathcal{N}\\!\\left(\\mu,\\, \\frac{\\sigma^2}{n}\\right) \\quad \\text{as } n \\to \\infty\\]\n\nThe CLT explains why the Normal distribution appears everywhere in practice —\nsample means are approximately Normal regardless of the population distribution."
+  },
+  {
+    "objectID": "slides/Ch03.html#exponential-distribution",
+    "href": "slides/Ch03.html#exponential-distribution",
+    "title": "Key Distributions",
+    "section": "0.12 Exponential Distribution",
+    "text": "0.12 Exponential Distribution\nTime between events in a Poisson process.\n\\[X \\sim \\mathrm{Exp}(\\lambda)\\]\n\\[f(x) = \\lambda e^{-\\lambda x}, \\quad x \\ge 0\\]\n\n\n\nMean\n\\(1/\\lambda\\)\n\n\nVariance\n\\(1/\\lambda^2\\)\n\n\nMemoryless\n\\(P(X &gt; s+t \\mid X &gt; s) = P(X &gt; t)\\)"
+  },
+  {
+    "objectID": "slides/Ch03.html#gamma-beta-distributions",
+    "href": "slides/Ch03.html#gamma-beta-distributions",
+    "title": "Key Distributions",
+    "section": "0.13 Gamma & Beta Distributions",
+    "text": "0.13 Gamma & Beta Distributions\nGamma — generalises Exponential to \\(\\alpha\\) events:\n\\[X \\sim \\mathrm{Gamma}(\\alpha, \\beta):\\quad E[X] = \\alpha/\\beta,\\quad \\operatorname{Var}(X) = \\alpha/\\beta^2\\]\nBeta — models probabilities (support \\([0,1]\\)):\n\\[X \\sim \\mathrm{Beta}(\\alpha, \\beta):\\quad E[X] = \\frac{\\alpha}{\\alpha+\\beta}\\]\n\nBeta is the conjugate prior for a Bernoulli likelihood — the backbone of Bayesian A/B testing."
+  },
+  {
+    "objectID": "slides/Ch03.html#comparing-the-families",
+    "href": "slides/Ch03.html#comparing-the-families",
+    "title": "Key Distributions",
+    "section": "0.14 Comparing the Families",
+    "text": "0.14 Comparing the Families\n\n\n\n\n\n\n\n\nDistribution\nSupport\nCanonical use in DS\n\n\n\n\nBernoulli / Binomial\n\\(\\{0,1\\}\\) / \\(\\mathbb{Z}_{\\ge 0}\\)\nClassification labels, click-through\n\n\nPoisson\n\\(\\mathbb{Z}_{\\ge 0}\\)\nEvent counts, anomaly detection\n\n\nNormal\n\\(\\mathbb{R}\\)\nRegression targets, noise, CLT\n\n\nExponential\n\\(\\mathbb{R}_{\\ge 0}\\)\nTime-to-event, survival analysis\n\n\nBeta\n\\([0,1]\\)\nBayesian inference on rates\n\n\nGamma\n\\(\\mathbb{R}_{\\ge 0}\\)\nWaiting times, Bayesian priors"
+  },
+  {
+    "objectID": "slides/Ch03.html#key-takeaways",
+    "href": "slides/Ch03.html#key-takeaways",
+    "title": "Key Distributions",
+    "section": "0.15 Key Takeaways",
+    "text": "0.15 Key Takeaways\n\nDiscrete: Bernoulli → Binomial → Poisson: each a natural extension of the last\nContinuous: Uniform, Normal, Exponential are the workhorse trio\nThe CLT ties sample means to the Normal distribution\nChoosing the right distribution means matching its support & shape to your data\nConjugate priors (Beta–Bernoulli, Gamma–Poisson) enable clean Bayesian updates"
+  },
+  {
+    "objectID": "slides/Ch03.html#whats-next",
+    "href": "slides/Ch03.html#whats-next",
+    "title": "Key Distributions",
+    "section": "0.16 What’s Next",
+    "text": "0.16 What’s Next\nUpcoming topics:\n\nStatistical Inference — point estimation, confidence intervals\nHypothesis testing and \\(p\\)-values\nMaximum Likelihood Estimation\nBayesian inference and posterior computation"
   }
 ]

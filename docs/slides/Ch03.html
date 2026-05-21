@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
@@ -99,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8b86b48c1e77689ef4fcc026fe13e8d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b5231298e24bf61ce18e9358c9f8c47f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,25 +196,25 @@
     }
   </style>
   <style>
-  .Example {
-    --color1: #e7b1b433;
-    --color2: #8c323633;
-  }
-  .Remark {
-    --color1: #00A04733;
-    --color2: #01572733;
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
   }
   .Theorem {
     --color1: #b1b4e733;
-    --color2: #3038b033;
+    --color2: #b1b4e7;
   }
   .Definition {
     --color1: #CC191433;
-    --color2: #63090733;
+    --color2: #CC1914;
   }
-  .Note {
-    --color1: #70421433;
-    --color2: #331e0933;
+  .Remark {
+    --color1: #00A04733;
+    --color2: #00A047;
+  }
+  .Example {
+    --color1: #e7b1b433;
+    --color2: #e7b1b4;
   }
   .Corollary {
     --color1: #c0c0c0;
@@ -360,7 +361,7 @@ Classic heuristic: <span class="math inline">\(n \ge 20\)</span> and <span class
 <h2><span class="header-section-number">0.10</span> The Standard Normal</h2>
 <p><span class="math display">\[Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1)\]</span></p>
 <p>This standardisation lets us use a <span class="alert">single table / function</span> for all Normals.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="co"># P(Z &lt;= 1.96)</span></span>
 <span id="cb1-4"><a></a>norm.cdf(<span class="fl">1.96</span>)          <span class="co"># ≈ 0.975</span></span>
@@ -369,7 +370,7 @@ Classic heuristic: <span class="math inline">\(n \ge 20\)</span> and <span class
 <span id="cb1-7"><a></a>norm.ppf(<span class="fl">0.95</span>)          <span class="co"># ≈ 1.645</span></span>
 <span id="cb1-8"><a></a></span>
 <span id="cb1-9"><a></a><span class="co"># P(-1.96 &lt;= Z &lt;= 1.96)</span></span>
-<span id="cb1-10"><a></a>norm.cdf(<span class="fl">1.96</span>) <span class="op">-</span> norm.cdf(<span class="op">-</span><span class="fl">1.96</span>)   <span class="co"># ≈ 0.95</span></span></code></pre></div>
+<span id="cb1-10"><a></a>norm.cdf(<span class="fl">1.96</span>) <span class="op">-</span> norm.cdf(<span class="op">-</span><span class="fl">1.96</span>)   <span class="co"># ≈ 0.95</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="central-limit-theorem" class="slide level2" data-number="0.11">
 <h2><span class="header-section-number">0.11</span> Central Limit Theorem</h2>
@@ -674,7 +675,7 @@ sample means are approximately Normal regardless of the population distribution.
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -706,6 +707,68 @@ sample means are approximately Normal regardless of the population distribution.
         tabsets.forEach(function(tabset) {
           const tabby = new Tabby('#' + tabset.id);
         });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
             var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -806,21 +869,6 @@ sample means are approximately Normal regardless of the population distribution.
         }
       });
       </script>
-    <script>
-    (function() {
-      function toggleFooter() {
-        var f = document.querySelector(".reveal > .footer");
-        if (!f || typeof Reveal === "undefined") return;
-        var i = Reveal.getIndices();
-        f.style.display = (i.h === 0 && i.v === 0) ? "none" : "block";
-      }
-      if (typeof Reveal !== "undefined") {
-        Reveal.on("slidechanged", toggleFooter);
-        Reveal.on("ready", toggleFooter);
-        if (Reveal.isReady()) toggleFooter();
-      }
-    })();
-    </script>
     
 
 </body></html>
