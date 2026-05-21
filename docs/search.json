@@ -1,122 +1,108 @@
 [
   {
+    "objectID": "slides/Ch02.html#section",
+    "href": "slides/Ch02.html#section",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.1 ",
+    "text": "0.1 \n\n§ 1"
+  },
+  {
     "objectID": "slides/Ch02.html#random-variables",
     "href": "slides/Ch02.html#random-variables",
-    "title": "Random Variables",
-    "section": "0.1 Random Variables",
-    "text": "0.1 Random Variables"
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.2 Random Variables",
+    "text": "0.2 Random Variables\n\nFormalising uncertainty: moving from sample spaces to real-valued quantities that enable calculation."
   },
   {
-    "objectID": "slides/Ch02.html#what-is-a-random-variable",
-    "href": "slides/Ch02.html#what-is-a-random-variable",
-    "title": "Random Variables",
-    "section": "0.2 What is a Random Variable?",
-    "text": "0.2 What is a Random Variable?\nA random variable (RV) \\(X\\) is a function: \\[X : \\Omega \\longrightarrow \\mathbb{R}\\]\nIt maps each outcome to a real number.\n\nRoll two dice. Let $X = $ sum of faces.\n\\(X\\) takes values \\(2, 3, \\ldots, 12\\) — each with a different probability.\n\n\nRVs allow us to do algebra on probabilistic quantities."
+    "objectID": "slides/Ch02.html#random-variables-definition",
+    "href": "slides/Ch02.html#random-variables-definition",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.3 Random Variables — Definition",
+    "text": "0.3 Random Variables — Definition\n\nDefinition — Random Variable A random variable \\(X\\) is a measurable function \\(X : \\Omega \\to \\mathbb{R}\\), mapping outcomes \\(\\omega \\in \\Omega\\) from a probability space \\((\\Omega, \\mathcal{F}, \\mathbb{P})\\) to real numbers. For any Borel set \\(B \\subseteq \\mathbb{R}\\): \\[\\mathbb{P}(X \\in B) := \\mathbb{P}(\\{\\omega \\in \\Omega : X(\\omega) \\in B\\}).\\]\n\n\n\n0.3.1 Discrete RV\nTakes values in a countable set \\(\\{x_1, x_2, \\ldots\\}\\). Described by a probability mass function (PMF):\n\\[p_X(x) = \\mathbb{P}(X = x), \\qquad \\sum_{x} p_X(x) = 1.\\]\n\n\n0.3.2 Continuous RV\nDescribed by a probability density function (PDF) \\(f_X\\) such that:\n\\[\\mathbb{P}(a \\le X \\le b) = \\int_a^b f_X(x)\\,dx, \\qquad\n  \\int_{-\\infty}^{\\infty} f_X(x)\\,dx = 1.\\]\n\n\n\nNote The cumulative distribution function (CDF) \\(F_X(x) = \\mathbb{P}(X \\le x)\\) exists for both types and is right-continuous, non-decreasing, with \\(F_X(-\\infty)=0\\) and \\(F_X(+\\infty)=1\\)."
   },
   {
-    "objectID": "slides/Ch02.html#discrete-vs-continuous",
-    "href": "slides/Ch02.html#discrete-vs-continuous",
-    "title": "Random Variables",
-    "section": "0.3 Discrete vs Continuous",
-    "text": "0.3 Discrete vs Continuous\n\n\n\n\nDiscrete\nContinuous\n\n\n\n\nValues\nCountable set\nInterval in \\(\\mathbb{R}\\)\n\n\nSummary\nPMF \\(p(x)\\)\nPDF \\(f(x)\\)\n\n\nNormalisation\n\\(\\sum_x p(x) = 1\\)\n\\(\\int f(x)\\,dx = 1\\)\n\n\nExamples\nCounts, categories\nHeights, times"
+    "objectID": "slides/Ch02.html#expectation-variance-moments",
+    "href": "slides/Ch02.html#expectation-variance-moments",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.4 Expectation, Variance & Moments",
+    "text": "0.4 Expectation, Variance & Moments\n\n\n\nExpectation \\[\\mathbb{E}[X] = \\begin{cases}\n  \\sum_x x\\, p_X(x) & \\text{discrete}\\\\[4pt]\n  \\int_{-\\infty}^{\\infty} x\\, f_X(x)\\,dx & \\text{continuous}\n\\end{cases}\\]\nFor \\(g(X)\\): \\(\\mathbb{E}[g(X)] = \\int g(x) f_X(x)\\,dx\\).\n\n\nLinearity of Expectation For any constants \\(a, b\\) and RVs \\(X, Y\\) (not necessarily independent): \\[\\mathbb{E}[aX + bY] = a\\,\\mathbb{E}[X] + b\\,\\mathbb{E}[Y].\\]\n\n\n\n\nVariance & Standard Deviation \\[\\operatorname{Var}(X) = \\mathbb{E}[(X - \\mu)^2] = \\mathbb{E}[X^2] - \\mu^2\\] where \\(\\mu = \\mathbb{E}[X]\\). \\(\\operatorname{SD}(X) = \\sqrt{\\operatorname{Var}(X)}\\).\n\n\nVariance Algebra - \\(\\operatorname{Var}(aX+b) = a^2\\operatorname{Var}(X)\\) - \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X)+\\operatorname{Var}(Y)+2\\operatorname{Cov}(X,Y)\\) - If \\(X \\perp Y\\): \\(\\operatorname{Var}(X+Y) = \\operatorname{Var}(X)+\\operatorname{Var}(Y)\\)\n\n\n\n\nWorked Example Let \\(X \\sim \\text{Bernoulli}(p)\\). Then \\(\\mathbb{E}[X] = p\\) and \\(\\operatorname{Var}(X) = p(1-p)\\), maximised at \\(p = \\tfrac{1}{2}\\). For \\(Y = \\sum_{i=1}^n X_i\\) i.i.d.: \\(\\mathbb{E}[Y] = np\\), \\(\\operatorname{Var}(Y) = np(1-p)\\)."
   },
   {
-    "objectID": "slides/Ch02.html#probability-mass-function-pmf",
-    "href": "slides/Ch02.html#probability-mass-function-pmf",
-    "title": "Random Variables",
-    "section": "0.4 Probability Mass Function (PMF)",
-    "text": "0.4 Probability Mass Function (PMF)\nFor a discrete RV: \\(p(x) = P(X = x)\\)\nRequirements:\n\n\\(p(x) \\ge 0\\) for all \\(x\\)\n\\(\\sum_{x} p(x) = 1\\)\n\n\nFair die: \\(p(x) = \\tfrac{1}{6}\\) for \\(x \\in \\{1,\\ldots,6\\}\\), zero elsewhere."
+    "objectID": "slides/Ch02.html#key-distributions-in-data-science",
+    "href": "slides/Ch02.html#key-distributions-in-data-science",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.5 Key Distributions in Data Science",
+    "text": "0.5 Key Distributions in Data Science\n\n\n\n\n\n\n\n\n\n\nDistribution\nPMF / PDF\nMean\nVariance\nUse Case\n\n\n\n\nBernoulli\\((p)\\)\n\\(p^x(1-p)^{1-x}\\)\n\\(p\\)\n\\(p(1-p)\\)\nBinary outcomes\n\n\nBinomial\\((n,p)\\)\n\\(\\binom{n}{x}p^x(1-p)^{n-x}\\)\n\\(np\\)\n\\(np(1-p)\\)\nCount of successes\n\n\nPoisson\\((\\lambda)\\)\n\\(e^{-\\lambda}\\lambda^x / x!\\)\n\\(\\lambda\\)\n\\(\\lambda\\)\nRare event counts\n\n\nGaussian\\((\\mu,\\sigma^2)\\)\n\\(\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\)\n\\(\\mu\\)\n\\(\\sigma^2\\)\nCLT limit, noise\n\n\nExponential\\((\\lambda)\\)\n\\(\\lambda e^{-\\lambda x}\\), \\(x\\ge0\\)\n\\(1/\\lambda\\)\n\\(1/\\lambda^2\\)\nWaiting times\n\n\nBeta\\((\\alpha,\\beta)\\)\n\\(\\propto x^{\\alpha-1}(1-x)^{\\beta-1}\\)\n\\(\\frac{\\alpha}{\\alpha+\\beta}\\)\n\\(\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta+1)}\\)\nPrior over probabilities\n\n\n\n\nRelationship The Poisson distribution arises as the limit of Binomial\\((n,p)\\) when \\(n\\to\\infty\\), \\(p\\to 0\\) with \\(\\lambda = np\\) fixed. This justifies its use for rare events in large populations."
   },
   {
-    "objectID": "slides/Ch02.html#probability-density-function-pdf",
-    "href": "slides/Ch02.html#probability-density-function-pdf",
-    "title": "Random Variables",
-    "section": "0.5 Probability Density Function (PDF)",
-    "text": "0.5 Probability Density Function (PDF)\nFor a continuous RV, \\(P(X = x) = 0\\) for any single \\(x\\).\nInstead we use the PDF \\(f(x)\\): \\[P(a \\le X \\le b) = \\int_a^b f(x)\\,dx\\]\nRequirements:\n\n\\(f(x) \\ge 0\\)\n\n\\(\\int_{-\\infty}^{\\infty} f(x)\\,dx = 1\\)"
+    "objectID": "slides/Ch02.html#section-1",
+    "href": "slides/Ch02.html#section-1",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.6 ",
+    "text": "0.6 \n\n§ 2"
   },
   {
-    "objectID": "slides/Ch02.html#cumulative-distribution-function",
-    "href": "slides/Ch02.html#cumulative-distribution-function",
-    "title": "Random Variables",
-    "section": "0.6 Cumulative Distribution Function",
-    "text": "0.6 Cumulative Distribution Function\nThe CDF works for both discrete and continuous RVs:\n\\[F(x) = P(X \\le x)\\]\nKey properties:\n\nNon-decreasing: \\(x_1 &lt; x_2 \\Rightarrow F(x_1) \\le F(x_2)\\)\nRight-continuous\n\\(\\lim_{x \\to -\\infty} F(x) = 0\\), \\(\\lim_{x \\to +\\infty} F(x) = 1\\)\n\nFor continuous RVs: \\(f(x) = F'(x)\\)"
+    "objectID": "slides/Ch02.html#statistical-estimation",
+    "href": "slides/Ch02.html#statistical-estimation",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.7 Statistical Estimation",
+    "text": "0.7 Statistical Estimation\n\nFrom observations to parameters: bias, consistency, and the likelihood framework."
   },
   {
-    "objectID": "slides/Ch02.html#expectation",
-    "href": "slides/Ch02.html#expectation",
-    "title": "Random Variables",
-    "section": "0.7 Expectation",
-    "text": "0.7 Expectation"
+    "objectID": "slides/Ch02.html#maximum-likelihood-estimation",
+    "href": "slides/Ch02.html#maximum-likelihood-estimation",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.8 Maximum Likelihood Estimation",
+    "text": "0.8 Maximum Likelihood Estimation\n\nLikelihood Function Given i.i.d. observations \\(\\mathbf{x} = (x_1,\\ldots,x_n)\\) from a parametric family \\(\\{f(\\cdot;\\theta): \\theta\\in\\Theta\\}\\), the likelihood and log-likelihood are: \\[L(\\theta) = \\prod_{i=1}^{n} f(x_i;\\theta), \\qquad\n  \\ell(\\theta) = \\sum_{i=1}^{n} \\log f(x_i;\\theta).\\] The MLE is \\(\\hat\\theta_{\\mathrm{MLE}} = \\arg\\max_{\\theta\\in\\Theta} \\ell(\\theta)\\).\n\n\n\n\nExample — Gaussian MLE For \\(X_i \\sim \\mathcal{N}(\\mu,\\sigma^2)\\), the log-likelihood is \\[\\ell(\\mu,\\sigma^2) = -\\tfrac{n}{2}\\log(2\\pi\\sigma^2)\n  - \\tfrac{1}{2\\sigma^2}\\sum_{i=1}^n(x_i-\\mu)^2.\\] Solving \\(\\partial\\ell/\\partial\\mu = 0\\) and \\(\\partial\\ell/\\partial\\sigma^2 = 0\\): \\[\\hat\\mu = \\bar{x}, \\qquad\n  \\hat\\sigma^2 = \\tfrac{1}{n}\\sum_{i=1}^n(x_i - \\bar{x})^2.\\] Note: \\(\\hat\\sigma^2\\) is biased; the unbiased version divides by \\(n-1\\).\n\n\n\n\nAsymptotic Properties of MLE Under regularity conditions, as \\(n\\to\\infty\\):\n\nConsistency: \\(\\hat\\theta_n \\xrightarrow{p} \\theta^*\\)\nAsymptotic normality: \\[\\sqrt{n}(\\hat\\theta_n - \\theta^*) \\xrightarrow{d}\n  \\mathcal{N}(0,\\, \\mathcal{I}(\\theta^*)^{-1})\\] where \\(\\mathcal{I}(\\theta)\\) is the Fisher information.\nEfficiency: The MLE achieves the Cramér–Rao lower bound asymptotically."
   },
   {
-    "objectID": "slides/Ch02.html#expectation-mean",
-    "href": "slides/Ch02.html#expectation-mean",
-    "title": "Random Variables",
-    "section": "0.8 Expectation (Mean)",
-    "text": "0.8 Expectation (Mean)\nThe expected value (mean) of \\(X\\):\n\\[\\mu = E[X] = \\begin{cases} \\displaystyle\\sum_x x\\,p(x) & \\text{discrete} \\\\[8pt] \\displaystyle\\int_{-\\infty}^{\\infty} x\\,f(x)\\,dx & \\text{continuous} \\end{cases}\\]\n\n\\(E[X]\\) is the long-run average — it may not be an attainable value of \\(X\\)."
+    "objectID": "slides/Ch02.html#biasvariance-decomposition",
+    "href": "slides/Ch02.html#biasvariance-decomposition",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.9 Bias–Variance Decomposition",
+    "text": "0.9 Bias–Variance Decomposition\n\nTheorem — Bias–Variance Decomposition For an estimator \\(\\hat\\theta\\) of \\(\\theta^*\\), the Mean Squared Error decomposes as: \\[\\underbrace{\\mathbb{E}[(\\hat\\theta - \\theta^*)^2]}_{\\text{MSE}} =\n  \\underbrace{(\\mathbb{E}[\\hat\\theta] - \\theta^*)^2}_{\\text{Bias}^2} +\n  \\underbrace{\\mathbb{E}[(\\hat\\theta - \\mathbb{E}[\\hat\\theta])^2]}_{\\text{Variance}}.\\]\n\n\n\n0.9.1 In supervised learning\nFor a model \\(\\hat{f}\\) predicting \\(Y = f(X) + \\varepsilon\\) with \\(\\varepsilon \\sim (0,\\sigma^2)\\):\n\\[\\mathbb{E}[(Y - \\hat{f}(x))^2] =\n  \\underbrace{\\operatorname{Bias}^2[\\hat{f}(x)]}_{\\text{underfitting}} +\n  \\underbrace{\\operatorname{Var}[\\hat{f}(x)]}_{\\text{overfitting}} + \\sigma^2.\\]\nThe \\(\\sigma^2\\) term is the irreducible error — no model can eliminate it.\n\n\n\nPractical Implications - High bias: model too simple; misses structure. Use richer hypothesis class or more features. - High variance: model too complex; memorises noise. Use regularisation, early stopping, or more data. - Regularisation (Ridge/Lasso) introduces deliberate bias to reduce variance — a controlled tradeoff."
   },
   {
-    "objectID": "slides/Ch02.html#linearity-of-expectation",
-    "href": "slides/Ch02.html#linearity-of-expectation",
-    "title": "Random Variables",
-    "section": "0.9 Linearity of Expectation",
-    "text": "0.9 Linearity of Expectation\nFor constants \\(a, b\\) and RVs \\(X, Y\\):\n\\[E[aX + b] = a\\,E[X] + b\\]\n\\[E[X + Y] = E[X] + E[Y] \\quad (\\text{always!})\\]\n\n\n\n\n\n\nNote\n\n\nThe second equality holds regardless of dependence between \\(X\\) and \\(Y\\).\nThis makes expectation extraordinarily useful."
+    "objectID": "slides/Ch02.html#section-2",
+    "href": "slides/Ch02.html#section-2",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.10 ",
+    "text": "0.10 \n\n§ 3"
   },
   {
-    "objectID": "slides/Ch02.html#variance-standard-deviation",
-    "href": "slides/Ch02.html#variance-standard-deviation",
-    "title": "Random Variables",
-    "section": "0.10 Variance & Standard Deviation",
-    "text": "0.10 Variance & Standard Deviation\nVariance measures spread around the mean:\n\\[\\operatorname{Var}(X) = E\\!\\left[(X - \\mu)^2\\right] = E[X^2] - \\mu^2\\]\nStandard deviation: \\(\\sigma = \\sqrt{\\operatorname{Var}(X)}\\) (same units as \\(X\\))\nUseful identity: \\[\\operatorname{Var}(aX + b) = a^2\\,\\operatorname{Var}(X)\\]"
+    "objectID": "slides/Ch02.html#limit-theorems",
+    "href": "slides/Ch02.html#limit-theorems",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.11 Limit Theorems",
+    "text": "0.11 Limit Theorems\n\nThe Law of Large Numbers and Central Limit Theorem — the twin pillars underpinning statistical inference and Monte Carlo methods."
   },
   {
-    "objectID": "slides/Ch02.html#higher-moments",
-    "href": "slides/Ch02.html#higher-moments",
-    "title": "Random Variables",
-    "section": "0.11 Higher Moments",
-    "text": "0.11 Higher Moments\nThe \\(k\\)-th moment of \\(X\\): \\(E[X^k]\\)\nThe \\(k\\)-th central moment: \\(E[(X - \\mu)^k]\\)\n\n\n\nMoment\nSymbol\nMeasures\n\n\n\n\n1st central\n\\(0\\)\n(always zero)\n\n\n2nd central\n\\(\\sigma^2\\)\nSpread\n\n\n3rd standardised\nSkewness \\(\\gamma_1\\)\nAsymmetry\n\n\n4th standardised\nKurtosis \\(\\gamma_2\\)\nTail heaviness\n\n\n\n\nData scientists use skewness and kurtosis to detect non-Normality."
+    "objectID": "slides/Ch02.html#lln-central-limit-theorem",
+    "href": "slides/Ch02.html#lln-central-limit-theorem",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.12 LLN & Central Limit Theorem",
+    "text": "0.12 LLN & Central Limit Theorem\n\n\n\nStrong Law of Large Numbers If \\(X_1, X_2, \\ldots\\) are i.i.d. with \\(\\mathbb{E}[|X|] &lt; \\infty\\), then: \\[\\bar{X}_n = \\frac{1}{n}\\sum_{i=1}^n X_i \\;\\xrightarrow{\\text{a.s.}}\\;\n  \\mu = \\mathbb{E}[X].\\]\n\nAlmost sure convergence: \\(\\mathbb{P}(\\lim_{n\\to\\infty}\\bar{X}_n = \\mu) = 1\\).\n\n\n\nMonte Carlo Integration The LLN justifies estimating \\(I = \\mathbb{E}[g(X)] = \\int g(x)f(x)dx\\) by: \\[\\hat I_n = \\frac{1}{n}\\sum_{i=1}^n g(X_i), \\quad\n  X_i \\overset{\\text{i.i.d.}}{\\sim} f.\\] Error \\(\\hat{I}_n - I = O(n^{-1/2})\\) regardless of dimension — unlike quadrature.\n\n\n\n\nCentral Limit Theorem If \\(X_1,\\ldots,X_n\\) are i.i.d. with mean \\(\\mu\\) and variance \\(\\sigma^2 &lt; \\infty\\): \\[\\frac{\\bar X_n - \\mu}{\\sigma/\\sqrt{n}} \\;\\xrightarrow{d}\\;\n  \\mathcal{N}(0,1) \\quad \\text{as } n\\to\\infty.\\] Equivalently, \\(\\bar X_n \\;\\dot\\sim\\; \\mathcal{N}(\\mu, \\sigma^2/n)\\) for large \\(n\\).\n\n\nConfidence Interval from CLT A \\((1-\\alpha)\\) CI for \\(\\mu\\) (known \\(\\sigma\\)) is: \\[\\bar X_n \\pm z_{\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}},\\] where \\(z_{\\alpha/2} = \\Phi^{-1}(1 - \\alpha/2)\\). For \\(\\alpha=0.05\\): \\(z_{0.025} \\approx 1.96\\)."
   },
   {
-    "objectID": "slides/Ch02.html#moment-generating-functions",
-    "href": "slides/Ch02.html#moment-generating-functions",
-    "title": "Random Variables",
-    "section": "0.12 Moment Generating Functions",
-    "text": "0.12 Moment Generating Functions\nThe MGF of \\(X\\): \\[M_X(t) = E[e^{tX}]\\]\nWhy useful?\n\n\\(E[X^k] = M_X^{(k)}(0)\\) — moments by differentiation\nIf two RVs share an MGF, they share a distribution\nSums of independent RVs: \\(M_{X+Y}(t) = M_X(t)\\,M_Y(t)\\)"
+    "objectID": "slides/Ch02.html#computing-with-distributions-python",
+    "href": "slides/Ch02.html#computing-with-distributions-python",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.13 Computing with Distributions — Python",
+    "text": "0.13 Computing with Distributions — Python\n\n\n0.13.1 scipy.stats & numpy\n\nimport numpy as np\nfrom scipy import stats\n\n# Gaussian: pdf, cdf, quantile\nrv = stats.norm(loc=0, scale=1)\nrv.pdf(0)      # ≈ 0.3989\nrv.cdf(1.96)   # ≈ 0.9750\nrv.ppf(0.975)  # ≈ 1.9600  (z-score)\n\n# Sample mean & CLT illustration\nrng   = np.random.default_rng(42)\nX     = rng.exponential(scale=2, size=(10_000, 50))\nmeans = X.mean(axis=1)          # shape (10000,)\n\n# By CLT: means ~ N(2, 4/50)\nprint(means.mean(), means.std())\n# → ~2.000  ~0.283  (theory: √(4/50)≈0.283)\n\n\n\n0.13.2 MLE with scipy\n\nfrom scipy.stats import norm\n\n# Fit a Gaussian to data (MLE)\ndata = rng.normal(5, 2, 500)\nmu_hat, sig_hat = norm.fit(data)\nprint(f\"μ̂={mu_hat:.3f}, σ̂={sig_hat:.3f}\")\n# → μ̂≈5.00, σ̂≈2.00\n\n# Log-likelihood at the MLE\nll = norm.logpdf(data, mu_hat, sig_hat).sum()\n\n# Bootstrap 95% CI for the mean\nboots = [rng.choice(data, 500).mean()\n         for _ in range(5000)]\nci = np.percentile(boots, [2.5, 97.5])\nprint(f\"95% CI: [{ci[0]:.3f}, {ci[1]:.3f}]\")\n\n\nKey packages scipy.stats — distributions & tests · statsmodels — GLMs, time series · sklearn — ML pipelines"
   },
   {
-    "objectID": "slides/Ch02.html#joint-distributions",
-    "href": "slides/Ch02.html#joint-distributions",
-    "title": "Random Variables",
-    "section": "0.13 Joint Distributions",
-    "text": "0.13 Joint Distributions"
+    "objectID": "slides/Ch02.html#hypothesis-testing-framework",
+    "href": "slides/Ch02.html#hypothesis-testing-framework",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.14 Hypothesis Testing Framework",
+    "text": "0.14 Hypothesis Testing Framework\n\n\n\nSetup - Null hypothesis \\(H_0\\): default assumption (e.g. \\(\\mu = \\mu_0\\)) - Alternative \\(H_1\\): what we seek evidence for - Test statistic \\(T(\\mathbf{X})\\): summarises data - Rejection region \\(\\mathcal{C}\\): \\(H_0\\) rejected iff \\(T \\in \\mathcal{C}\\)\n\n\np-value \\[p = \\mathbb{P}_{H_0}(T \\ge t_{\\text{obs}})\\]\nThe probability, under \\(H_0\\), of observing data at least as extreme as what was observed. Reject \\(H_0\\) iff \\(p \\le \\alpha\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\\(H_0\\) true\n\\(H_0\\) false\n\n\n\n\nReject \\(H_0\\)\nType I error (\\(\\alpha\\))\nCorrect (Power)\n\n\nRetain \\(H_0\\)\nCorrect (\\(1-\\alpha\\))\nType II error (\\(\\beta\\))\n\n\n\n\nOne-sample z-test (known \\(\\sigma\\)) \\[T = \\frac{\\bar X - \\mu_0}{\\sigma/\\sqrt{n}}\n  \\;\\overset{H_0}{\\sim}\\; \\mathcal{N}(0,1).\\]\nReject \\(H_0\\) at level \\(\\alpha\\) (two-sided) if \\(|T| &gt; z_{\\alpha/2}\\). Power against \\(\\mu_1\\): \\[1-\\beta = \\Phi\\!\\left(-z_{\\alpha/2} -\n  \\frac{|\\mu_1-\\mu_0|}{\\sigma/\\sqrt{n}}\\right).\\]\n\n\n\n\nCommon Misinterpretations \\(p &lt; 0.05\\) does not mean \\(H_0\\) is false, nor that the effect is large or practically important. Report effect sizes and CIs alongside \\(p\\)-values."
   },
   {
-    "objectID": "slides/Ch02.html#joint-marginal-distributions",
-    "href": "slides/Ch02.html#joint-marginal-distributions",
-    "title": "Random Variables",
-    "section": "0.14 Joint & Marginal Distributions",
-    "text": "0.14 Joint & Marginal Distributions\nFor two RVs \\((X, Y)\\):\nJoint PMF/PDF: \\(p(x, y)\\) or \\(f(x, y)\\)\nMarginal distributions by summing/integrating out: \\[p_X(x) = \\sum_y p(x,y), \\qquad f_X(x) = \\int f(x,y)\\,dy\\]\nConditional distribution: \\[f_{Y \\mid X}(y \\mid x) = \\frac{f(x,y)}{f_X(x)}\\]"
-  },
-  {
-    "objectID": "slides/Ch02.html#covariance-correlation",
-    "href": "slides/Ch02.html#covariance-correlation",
-    "title": "Random Variables",
-    "section": "0.15 Covariance & Correlation",
-    "text": "0.15 Covariance & Correlation\n\\[\\operatorname{Cov}(X, Y) = E[(X-\\mu_X)(Y-\\mu_Y)] = E[XY] - \\mu_X\\mu_Y\\]\nPearson correlation (dimensionless, \\(\\in [-1, 1]\\)): \\[\\rho_{XY} = \\frac{\\operatorname{Cov}(X,Y)}{\\sigma_X\\,\\sigma_Y}\\]\n\nIf \\(\\rho_{XY} = 0\\), are \\(X\\) and \\(Y\\) independent? Not necessarily!\nIndependence \\(\\Rightarrow\\) zero correlation, but not vice versa."
-  },
-  {
-    "objectID": "slides/Ch02.html#key-takeaways",
-    "href": "slides/Ch02.html#key-takeaways",
-    "title": "Random Variables",
-    "section": "0.16 Key Takeaways",
-    "text": "0.16 Key Takeaways\n\nA RV maps outcomes to real numbers; described by PMF/PDF and CDF\nExpectation is a linear operator — powerfully simple\nVariance measures spread; standard deviation restores units\nCovariance captures linear association; correlation standardises it"
-  },
-  {
-    "objectID": "slides/Ch02.html#next-lecture",
-    "href": "slides/Ch02.html#next-lecture",
-    "title": "Random Variables",
-    "section": "0.17 Next Lecture",
-    "text": "0.17 Next Lecture\nLecture 03 · Key Distributions\n\nBernoulli, Binomial, and Poisson (discrete)\nUniform, Normal, and Exponential (continuous)\nRelationships and data-science applications"
+    "objectID": "slides/Ch02.html#lecture-summary-reading",
+    "href": "slides/Ch02.html#lecture-summary-reading",
+    "title": "Probability & Statistics for Data Science",
+    "section": "0.15 Lecture Summary & Reading",
+    "text": "0.15 Lecture Summary & Reading\n\n\n0.15.1 Key takeaways\n\nA random variable maps probability space to \\(\\mathbb{R}\\); characterised by PMF/PDF and CDF.\nExpectation is linear; variance follows its own algebra — understand these cold.\nKnow the standard families (Gaussian, Poisson, Exponential, Beta) and their DS applications.\nMLE maximises log-likelihood; for regular families it is consistent and asymptotically efficient.\nThe Bias–Variance decomposition governs every learning algorithm’s error.\nThe CLT justifies Gaussian approximations and Monte Carlo estimation; LLN ensures convergence.\nHypothesis testing: prespecify \\(\\alpha\\), compute \\(p\\)-value, do not confuse statistical with practical significance.\n\n\n\n\nRecommended Reading - All of Statistics — Wasserman, Ch. 3–5 - Pattern Recognition & ML — Bishop, Ch. 1–2 - Elements of Statistical Learning — HTF, Ch. 2–3 - scipy.stats docs\n\n\nProblem Set 5 1. Derive the MLE for \\(\\lambda\\) in Poisson\\((\\lambda)\\). 2. Show \\(S^2 = \\frac{1}{n-1}\\sum(X_i-\\bar X)^2\\) is unbiased for \\(\\sigma^2\\). 3. Simulate the CLT for \\(X \\sim \\text{Exp}(1)\\) with \\(n \\in \\{5,30,100\\}\\). Plot histograms. 4. Implement a permutation test for the two-sample mean problem."
   },
   {
     "objectID": "index.html",

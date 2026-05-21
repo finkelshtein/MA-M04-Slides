@@ -6,13 +6,15 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ce4278342a015d016477ed09bce942c5.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-98f33259cc9912f9b44620857d989c8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
-  <title>Probability &amp; Statistics for Data Science – Random Variables</title>
+  <meta name="author" content="Dr.&nbsp;A. Morgan">
+  <meta name="dcterms.date" content="2025-01-01">
+  <title>Probability &amp; Statistics for Data Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -33,13 +35,77 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e7fae955c581777a40040bc55438a75a.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-9a262ec5285b155a957453179fad9ccb.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -52,7 +118,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -130,29 +195,29 @@
     }
   </style>
   <style>
-  .Remark {
-    --color1: #00A04733;
-    --color2: #00A047;
+  .Theorem {
+    --color1: #b1b4e733;
+    --color2: #b1b4e7;
   }
-  .Example {
-    --color1: #e7b1b433;
-    --color2: #e7b1b4;
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
   }
   .Definition {
     --color1: #CC191433;
     --color2: #CC1914;
   }
-  .Theorem {
-    --color1: #b1b4e733;
-    --color2: #b1b4e7;
+  .Example {
+    --color1: #e7b1b433;
+    --color2: #e7b1b4;
+  }
+  .Remark {
+    --color1: #00A04733;
+    --color2: #00A047;
   }
   .Corollary {
     --color1: #c0c0c0;
     --color2: #808080;
-  }
-  .Note {
-    --color1: #70421433;
-    --color2: #704214;
   }
   </style>
 </head>
@@ -161,227 +226,398 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Random Variables</h1>
-  <p class="subtitle">Probability &amp; Statistics for Data Science — Lecture 02</p>
+  <h1 class="title">Probability &amp; Statistics for Data Science</h1>
+  <p class="subtitle">Lecture 5 · Random Variables &amp; Distributions</p>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;A. Morgan 
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Statistical Computing
+          </p>
+    </div>
 </div>
 
+  <p class="date">2025-01-01</p>
 </section>
-<section id="random-variables" class="slide level2 section-slide" data-number="0.1">
-<h2><span class="header-section-number">0.1</span> Random Variables</h2>
+<section class="slide level2">
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     §1 — RANDOM VARIABLES
+     ══════════════════════════════════════════════════════════════════════ -->
 </section>
-<section id="what-is-a-random-variable" class="slide level2" data-number="0.2">
-<h2><span class="header-section-number">0.2</span> What is a Random Variable?</h2>
-<p>A <strong>random variable</strong> (RV) <span class="math inline">\(X\)</span> is a function: <span class="math display">\[X : \Omega \longrightarrow \mathbb{R}\]</span></p>
-<p>It maps each outcome to a real number.</p>
-<div class="callout-example">
-<p>Roll two dice. Let $X = $ sum of faces.<br>
-<span class="math inline">\(X\)</span> takes values <span class="math inline">\(2, 3, \ldots, 12\)</span> — each with a different probability.</p>
-</div>
-<div class="note">
-<p>RVs allow us to do <em>algebra</em> on probabilistic quantities.</p>
+<section id="section" class="slide level2 section-slide" data-number="0.1">
+<h2><span class="header-section-number">0.1</span> </h2>
+<div class="sec-num">
+<p>§ 1</p>
 </div>
 </section>
-<section id="discrete-vs-continuous" class="slide level2" data-number="0.3">
-<h2><span class="header-section-number">0.3</span> Discrete vs Continuous</h2>
+<section id="random-variables" class="slide level2 section-slide" data-number="0.2">
+<h2><span class="header-section-number">0.2</span> Random Variables</h2>
+<div class="sec-desc">
+<p>Formalising uncertainty: moving from sample spaces to real-valued quantities that enable calculation.</p>
+</div>
+</section>
+<section id="random-variables-definition" class="slide level2" data-number="0.3">
+<h2><span class="header-section-number">0.3</span> Random Variables — Definition</h2>
+<div class="box def">
+<p><span class="box-title">Definition — Random Variable</span> A <strong>random variable</strong> <span class="math inline">\(X\)</span> is a measurable function <span class="math inline">\(X : \Omega \to \mathbb{R}\)</span>, mapping outcomes <span class="math inline">\(\omega \in \Omega\)</span> from a probability space <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> to real numbers. For any Borel set <span class="math inline">\(B \subseteq \mathbb{R}\)</span>: <span class="math display">\[\mathbb{P}(X \in B) := \mathbb{P}(\{\omega \in \Omega : X(\omega) \in B\}).\]</span></p>
+</div>
+<div class="cols cols-2">
+<section id="discrete-rv" class="col" data-number="0.3.1">
+<h3 data-number="0.3.1"><span class="header-section-number">0.3.1</span> Discrete RV</h3>
+<p>Takes values in a countable set <span class="math inline">\(\{x_1, x_2, \ldots\}\)</span>. Described by a <strong>probability mass function (PMF)</strong>:</p>
+<p><span class="math display">\[p_X(x) = \mathbb{P}(X = x), \qquad \sum_{x} p_X(x) = 1.\]</span></p>
+</section>
+<section id="continuous-rv" class="col" data-number="0.3.2">
+<h3 data-number="0.3.2"><span class="header-section-number">0.3.2</span> Continuous RV</h3>
+<p>Described by a <strong>probability density function (PDF)</strong> <span class="math inline">\(f_X\)</span> such that:</p>
+<p><span class="math display">\[\mathbb{P}(a \le X \le b) = \int_a^b f_X(x)\,dx, \qquad
+  \int_{-\infty}^{\infty} f_X(x)\,dx = 1.\]</span></p>
+</section>
+</div>
+<div class="box rmk">
+<p><span class="box-title">Note</span> The <strong>cumulative distribution function (CDF)</strong> <span class="math inline">\(F_X(x) = \mathbb{P}(X \le x)\)</span> exists for both types and is right-continuous, non-decreasing, with <span class="math inline">\(F_X(-\infty)=0\)</span> and <span class="math inline">\(F_X(+\infty)=1\)</span>.</p>
+</div>
+</section>
+<section id="expectation-variance-moments" class="slide level2" data-number="0.4">
+<h2><span class="header-section-number">0.4</span> Expectation, Variance &amp; Moments</h2>
+<div class="cols cols-2">
+<div class="col">
+<div class="box def">
+<p><span class="box-title">Expectation</span> <span class="math display">\[\mathbb{E}[X] = \begin{cases}
+  \sum_x x\, p_X(x) &amp; \text{discrete}\\[4pt]
+  \int_{-\infty}^{\infty} x\, f_X(x)\,dx &amp; \text{continuous}
+\end{cases}\]</span></p>
+<p>For <span class="math inline">\(g(X)\)</span>: <span class="math inline">\(\mathbb{E}[g(X)] = \int g(x) f_X(x)\,dx\)</span>.</p>
+</div>
+<div class="box prop">
+<p><span class="box-title">Linearity of Expectation</span> For any constants <span class="math inline">\(a, b\)</span> and RVs <span class="math inline">\(X, Y\)</span> (not necessarily independent): <span class="math display">\[\mathbb{E}[aX + bY] = a\,\mathbb{E}[X] + b\,\mathbb{E}[Y].\]</span></p>
+</div>
+</div>
+<div class="col">
+<div class="box def">
+<p><span class="box-title">Variance &amp; Standard Deviation</span> <span class="math display">\[\operatorname{Var}(X) = \mathbb{E}[(X - \mu)^2] = \mathbb{E}[X^2] - \mu^2\]</span> where <span class="math inline">\(\mu = \mathbb{E}[X]\)</span>. <span class="math inline">\(\operatorname{SD}(X) = \sqrt{\operatorname{Var}(X)}\)</span>.</p>
+</div>
+<div class="box thm">
+<p><span class="box-title">Variance Algebra</span> - <span class="math inline">\(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\)</span> - <span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y)\)</span> - If <span class="math inline">\(X \perp Y\)</span>: <span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X)+\operatorname{Var}(Y)\)</span></p>
+</div>
+</div>
+</div>
+<div class="box ex">
+<p><span class="box-title">Worked Example</span> Let <span class="math inline">\(X \sim \text{Bernoulli}(p)\)</span>. Then <span class="math inline">\(\mathbb{E}[X] = p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = p(1-p)\)</span>, maximised at <span class="math inline">\(p = \tfrac{1}{2}\)</span>. For <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span> i.i.d.: <span class="math inline">\(\mathbb{E}[Y] = np\)</span>, <span class="math inline">\(\operatorname{Var}(Y) = np(1-p)\)</span>.</p>
+</div>
+</section>
+<section id="key-distributions-in-data-science" class="slide level2" data-number="0.5">
+<h2><span class="header-section-number">0.5</span> Key Distributions in Data Science</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>PMF / PDF</th>
+<th>Mean</th>
+<th>Variance</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Bernoulli</strong><span class="math inline">\((p)\)</span></td>
+<td><span class="math inline">\(p^x(1-p)^{1-x}\)</span></td>
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(p(1-p)\)</span></td>
+<td>Binary outcomes</td>
+</tr>
+<tr class="even">
+<td><strong>Binomial</strong><span class="math inline">\((n,p)\)</span></td>
+<td><span class="math inline">\(\binom{n}{x}p^x(1-p)^{n-x}\)</span></td>
+<td><span class="math inline">\(np\)</span></td>
+<td><span class="math inline">\(np(1-p)\)</span></td>
+<td>Count of successes</td>
+</tr>
+<tr class="odd">
+<td><strong>Poisson</strong><span class="math inline">\((\lambda)\)</span></td>
+<td><span class="math inline">\(e^{-\lambda}\lambda^x / x!\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td>Rare event counts</td>
+</tr>
+<tr class="even">
+<td><strong>Gaussian</strong><span class="math inline">\((\mu,\sigma^2)\)</span></td>
+<td><span class="math inline">\(\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td>CLT limit, noise</td>
+</tr>
+<tr class="odd">
+<td><strong>Exponential</strong><span class="math inline">\((\lambda)\)</span></td>
+<td><span class="math inline">\(\lambda e^{-\lambda x}\)</span>, <span class="math inline">\(x\ge0\)</span></td>
+<td><span class="math inline">\(1/\lambda\)</span></td>
+<td><span class="math inline">\(1/\lambda^2\)</span></td>
+<td>Waiting times</td>
+</tr>
+<tr class="even">
+<td><strong>Beta</strong><span class="math inline">\((\alpha,\beta)\)</span></td>
+<td><span class="math inline">\(\propto x^{\alpha-1}(1-x)^{\beta-1}\)</span></td>
+<td><span class="math inline">\(\frac{\alpha}{\alpha+\beta}\)</span></td>
+<td><span class="math inline">\(\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)</span></td>
+<td>Prior over probabilities</td>
+</tr>
+</tbody>
+</table>
+<div class="box rmk">
+<p><span class="box-title">Relationship</span> The <strong>Poisson distribution</strong> arises as the limit of Binomial<span class="math inline">\((n,p)\)</span> when <span class="math inline">\(n\to\infty\)</span>, <span class="math inline">\(p\to 0\)</span> with <span class="math inline">\(\lambda = np\)</span> fixed. This justifies its use for rare events in large populations.</p>
+</div>
+<!-- ══════════════════════════════════════════════════════════════════════
+     §2 — STATISTICAL ESTIMATION
+     ══════════════════════════════════════════════════════════════════════ -->
+</section>
+<section id="section-1" class="slide level2 section-slide" data-number="0.6">
+<h2><span class="header-section-number">0.6</span> </h2>
+<div class="sec-num">
+<p>§ 2</p>
+</div>
+</section>
+<section id="statistical-estimation" class="slide level2 section-slide" data-number="0.7">
+<h2><span class="header-section-number">0.7</span> Statistical Estimation</h2>
+<div class="sec-desc">
+<p>From observations to parameters: bias, consistency, and the likelihood framework.</p>
+</div>
+</section>
+<section id="maximum-likelihood-estimation" class="slide level2" data-number="0.8">
+<h2><span class="header-section-number">0.8</span> Maximum Likelihood Estimation</h2>
+<div class="box def">
+<p><span class="box-title">Likelihood Function</span> Given i.i.d. observations <span class="math inline">\(\mathbf{x} = (x_1,\ldots,x_n)\)</span> from a parametric family <span class="math inline">\(\{f(\cdot;\theta): \theta\in\Theta\}\)</span>, the <strong>likelihood</strong> and <strong>log-likelihood</strong> are: <span class="math display">\[L(\theta) = \prod_{i=1}^{n} f(x_i;\theta), \qquad
+  \ell(\theta) = \sum_{i=1}^{n} \log f(x_i;\theta).\]</span> The <strong>MLE</strong> is <span class="math inline">\(\hat\theta_{\mathrm{MLE}} = \arg\max_{\theta\in\Theta} \ell(\theta)\)</span>.</p>
+</div>
+<div class="cols cols-2">
+<div class="col">
+<div class="box ex">
+<p><span class="box-title">Example — Gaussian MLE</span> For <span class="math inline">\(X_i \sim \mathcal{N}(\mu,\sigma^2)\)</span>, the log-likelihood is <span class="math display">\[\ell(\mu,\sigma^2) = -\tfrac{n}{2}\log(2\pi\sigma^2)
+  - \tfrac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2.\]</span> Solving <span class="math inline">\(\partial\ell/\partial\mu = 0\)</span> and <span class="math inline">\(\partial\ell/\partial\sigma^2 = 0\)</span>: <span class="math display">\[\hat\mu = \bar{x}, \qquad
+  \hat\sigma^2 = \tfrac{1}{n}\sum_{i=1}^n(x_i - \bar{x})^2.\]</span> Note: <span class="math inline">\(\hat\sigma^2\)</span> is <span class="red">biased</span>; the unbiased version divides by <span class="math inline">\(n-1\)</span>.</p>
+</div>
+</div>
+<div class="col">
+<div class="box thm">
+<p><span class="box-title">Asymptotic Properties of MLE</span> Under regularity conditions, as <span class="math inline">\(n\to\infty\)</span>:</p>
+<ol type="1">
+<li><strong>Consistency:</strong> <span class="math inline">\(\hat\theta_n \xrightarrow{p} \theta^*\)</span></li>
+<li><strong>Asymptotic normality:</strong> <span class="math display">\[\sqrt{n}(\hat\theta_n - \theta^*) \xrightarrow{d}
+  \mathcal{N}(0,\, \mathcal{I}(\theta^*)^{-1})\]</span> where <span class="math inline">\(\mathcal{I}(\theta)\)</span> is the Fisher information.</li>
+<li><strong>Efficiency:</strong> The MLE achieves the <em>Cramér–Rao lower bound</em> asymptotically.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="biasvariance-decomposition" class="slide level2" data-number="0.9">
+<h2><span class="header-section-number">0.9</span> Bias–Variance Decomposition</h2>
+<div class="box thm">
+<p><span class="box-title">Theorem — Bias–Variance Decomposition</span> For an estimator <span class="math inline">\(\hat\theta\)</span> of <span class="math inline">\(\theta^*\)</span>, the Mean Squared Error decomposes as: <span class="math display">\[\underbrace{\mathbb{E}[(\hat\theta - \theta^*)^2]}_{\text{MSE}} =
+  \underbrace{(\mathbb{E}[\hat\theta] - \theta^*)^2}_{\text{Bias}^2} +
+  \underbrace{\mathbb{E}[(\hat\theta - \mathbb{E}[\hat\theta])^2]}_{\text{Variance}}.\]</span></p>
+</div>
+<div class="cols cols-2">
+<section id="in-supervised-learning" class="col" data-number="0.9.1">
+<h3 data-number="0.9.1"><span class="header-section-number">0.9.1</span> In supervised learning</h3>
+<p>For a model <span class="math inline">\(\hat{f}\)</span> predicting <span class="math inline">\(Y = f(X) + \varepsilon\)</span> with <span class="math inline">\(\varepsilon \sim (0,\sigma^2)\)</span>:</p>
+<p><span class="math display">\[\mathbb{E}[(Y - \hat{f}(x))^2] =
+  \underbrace{\operatorname{Bias}^2[\hat{f}(x)]}_{\text{underfitting}} +
+  \underbrace{\operatorname{Var}[\hat{f}(x)]}_{\text{overfitting}} + \sigma^2.\]</span></p>
+<p>The <span class="math inline">\(\sigma^2\)</span> term is the <strong>irreducible error</strong> — no model can eliminate it.</p>
+</section>
+<div class="col">
+<div class="box warn">
+<p><span class="box-title">Practical Implications</span> - <strong>High bias:</strong> model too simple; misses structure. Use richer hypothesis class or more features. - <strong>High variance:</strong> model too complex; memorises noise. Use regularisation, early stopping, or more data. - Regularisation (Ridge/Lasso) introduces <em>deliberate bias</em> to reduce variance — a controlled tradeoff.</p>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════════════════════════════════════════════════
+     §3 — LIMIT THEOREMS
+     ══════════════════════════════════════════════════════════════════════ -->
+</section>
+<section id="section-2" class="slide level2 section-slide" data-number="0.10">
+<h2><span class="header-section-number">0.10</span> </h2>
+<div class="sec-num">
+<p>§ 3</p>
+</div>
+</section>
+<section id="limit-theorems" class="slide level2 section-slide" data-number="0.11">
+<h2><span class="header-section-number">0.11</span> Limit Theorems</h2>
+<div class="sec-desc">
+<p>The Law of Large Numbers and Central Limit Theorem — the twin pillars underpinning statistical inference and Monte Carlo methods.</p>
+</div>
+</section>
+<section id="lln-central-limit-theorem" class="slide level2" data-number="0.12">
+<h2><span class="header-section-number">0.12</span> LLN &amp; Central Limit Theorem</h2>
+<div class="cols cols-2">
+<div class="col">
+<div class="box thm">
+<p><span class="box-title">Strong Law of Large Numbers</span> If <span class="math inline">\(X_1, X_2, \ldots\)</span> are i.i.d. with <span class="math inline">\(\mathbb{E}[|X|] &lt; \infty\)</span>, then: <span class="math display">\[\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i \;\xrightarrow{\text{a.s.}}\;
+  \mu = \mathbb{E}[X].\]</span></p>
+<div class="margin-note">
+<p>Almost sure convergence: <span class="math inline">\(\mathbb{P}(\lim_{n\to\infty}\bar{X}_n = \mu) = 1\)</span>.</p>
+</div>
+</div>
+<div class="box prop">
+<p><span class="box-title">Monte Carlo Integration</span> The LLN justifies estimating <span class="math inline">\(I = \mathbb{E}[g(X)] = \int g(x)f(x)dx\)</span> by: <span class="math display">\[\hat I_n = \frac{1}{n}\sum_{i=1}^n g(X_i), \quad
+  X_i \overset{\text{i.i.d.}}{\sim} f.\]</span> Error <span class="math inline">\(\hat{I}_n - I = O(n^{-1/2})\)</span> regardless of dimension — unlike quadrature.</p>
+</div>
+</div>
+<div class="col">
+<div class="box thm">
+<p><span class="box-title">Central Limit Theorem</span> If <span class="math inline">\(X_1,\ldots,X_n\)</span> are i.i.d. with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &lt; \infty\)</span>: <span class="math display">\[\frac{\bar X_n - \mu}{\sigma/\sqrt{n}} \;\xrightarrow{d}\;
+  \mathcal{N}(0,1) \quad \text{as } n\to\infty.\]</span> Equivalently, <span class="math inline">\(\bar X_n \;\dot\sim\; \mathcal{N}(\mu, \sigma^2/n)\)</span> for large <span class="math inline">\(n\)</span>.</p>
+</div>
+<div class="box ex">
+<p><span class="box-title">Confidence Interval from CLT</span> A <span class="math inline">\((1-\alpha)\)</span> CI for <span class="math inline">\(\mu\)</span> (known <span class="math inline">\(\sigma\)</span>) is: <span class="math display">\[\bar X_n \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}},\]</span> where <span class="math inline">\(z_{\alpha/2} = \Phi^{-1}(1 - \alpha/2)\)</span>. For <span class="math inline">\(\alpha=0.05\)</span>: <span class="math inline">\(z_{0.025} \approx 1.96\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="computing-with-distributions-python" class="slide level2" data-number="0.13">
+<h2><span class="header-section-number">0.13</span> Computing with Distributions — Python</h2>
+<div class="cols cols-2">
+<section id="scipy.stats-numpy" class="col" data-number="0.13.1">
+<h3 data-number="0.13.1"><span class="header-section-number">0.13.1</span> scipy.stats &amp; numpy</h3>
+<div id="8a7f9d53" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Gaussian: pdf, cdf, quantile</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>rv <span class="op">=</span> stats.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>rv.pdf(<span class="dv">0</span>)      <span class="co"># ≈ 0.3989</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>rv.cdf(<span class="fl">1.96</span>)   <span class="co"># ≈ 0.9750</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>rv.ppf(<span class="fl">0.975</span>)  <span class="co"># ≈ 1.9600  (z-score)</span></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Sample mean &amp; CLT illustration</span></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>rng   <span class="op">=</span> np.random.default_rng(<span class="dv">42</span>)</span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>X     <span class="op">=</span> rng.exponential(scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span>(<span class="dv">10_000</span>, <span class="dv">50</span>))</span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> X.mean(axis<span class="op">=</span><span class="dv">1</span>)          <span class="co"># shape (10000,)</span></span>
+<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a><span class="co"># By CLT: means ~ N(2, 4/50)</span></span>
+<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(means.mean(), means.std())</span>
+<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a><span class="co"># → ~2.000  ~0.283  (theory: √(4/50)≈0.283)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="mle-with-scipy" class="col" data-number="0.13.2">
+<h3 data-number="0.13.2"><span class="header-section-number">0.13.2</span> MLE with scipy</h3>
+<div id="dc23d619" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a Gaussian to data (MLE)</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> rng.normal(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">500</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>mu_hat, sig_hat <span class="op">=</span> norm.fit(data)</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"μ̂=</span><span class="sc">{</span>mu_hat<span class="sc">:.3f}</span><span class="ss">, σ̂=</span><span class="sc">{</span>sig_hat<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># → μ̂≈5.00, σ̂≈2.00</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Log-likelihood at the MLE</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>ll <span class="op">=</span> norm.logpdf(data, mu_hat, sig_hat).<span class="bu">sum</span>()</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Bootstrap 95% CI for the mean</span></span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>boots <span class="op">=</span> [rng.choice(data, <span class="dv">500</span>).mean()</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5000</span>)]</span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>ci <span class="op">=</span> np.percentile(boots, [<span class="fl">2.5</span>, <span class="fl">97.5</span>])</span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"95% CI: [</span><span class="sc">{</span>ci[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, </span><span class="sc">{</span>ci[<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="box rmk">
+<p><span class="box-title">Key packages</span> <code>scipy.stats</code> — distributions &amp; tests · <code>statsmodels</code> — GLMs, time series · <code>sklearn</code> — ML pipelines</p>
+</div>
+</section>
+</div>
+</section>
+<section id="hypothesis-testing-framework" class="slide level2" data-number="0.14">
+<h2><span class="header-section-number">0.14</span> Hypothesis Testing Framework</h2>
+<div class="cols cols-2">
+<div class="col">
+<div class="box def">
+<p><span class="box-title">Setup</span> - <strong>Null hypothesis</strong> <span class="math inline">\(H_0\)</span>: default assumption (e.g.&nbsp;<span class="math inline">\(\mu = \mu_0\)</span>) - <strong>Alternative</strong> <span class="math inline">\(H_1\)</span>: what we seek evidence for - <strong>Test statistic</strong> <span class="math inline">\(T(\mathbf{X})\)</span>: summarises data - <strong>Rejection region</strong> <span class="math inline">\(\mathcal{C}\)</span>: <span class="math inline">\(H_0\)</span> rejected iff <span class="math inline">\(T \in \mathcal{C}\)</span></p>
+</div>
+<div class="box def">
+<p><span class="box-title">p-value</span> <span class="math display">\[p = \mathbb{P}_{H_0}(T \ge t_{\text{obs}})\]</span></p>
+<p>The probability, <em>under <span class="math inline">\(H_0\)</span></em>, of observing data at least as extreme as what was observed. <span class="red">Reject <span class="math inline">\(H_0\)</span> iff <span class="math inline">\(p \le \alpha\)</span>.</span></p>
+</div>
+</div>
+<div class="col">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th><strong>Discrete</strong></th>
-<th><strong>Continuous</strong></th>
+<th><span class="math inline">\(H_0\)</span> true</th>
+<th><span class="math inline">\(H_0\)</span> false</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Values</td>
-<td>Countable set</td>
-<td>Interval in <span class="math inline">\(\mathbb{R}\)</span></td>
+<td><strong>Reject <span class="math inline">\(H_0\)</span></strong></td>
+<td><span class="red">Type I error (<span class="math inline">\(\alpha\)</span>)</span></td>
+<td><span class="grn">Correct (Power)</span></td>
 </tr>
 <tr class="even">
-<td>Summary</td>
-<td>PMF <span class="math inline">\(p(x)\)</span></td>
-<td>PDF <span class="math inline">\(f(x)\)</span></td>
-</tr>
-<tr class="odd">
-<td>Normalisation</td>
-<td><span class="math inline">\(\sum_x p(x) = 1\)</span></td>
-<td><span class="math inline">\(\int f(x)\,dx = 1\)</span></td>
-</tr>
-<tr class="even">
-<td>Examples</td>
-<td>Counts, categories</td>
-<td>Heights, times</td>
+<td><strong>Retain <span class="math inline">\(H_0\)</span></strong></td>
+<td><span class="grn">Correct (<span class="math inline">\(1-\alpha\)</span>)</span></td>
+<td><span class="red">Type II error (<span class="math inline">\(\beta\)</span>)</span></td>
 </tr>
 </tbody>
 </table>
+<div class="box prop">
+<p><span class="box-title">One-sample z-test (known <span class="math inline">\(\sigma\)</span>)</span> <span class="math display">\[T = \frac{\bar X - \mu_0}{\sigma/\sqrt{n}}
+  \;\overset{H_0}{\sim}\; \mathcal{N}(0,1).\]</span></p>
+<p>Reject <span class="math inline">\(H_0\)</span> at level <span class="math inline">\(\alpha\)</span> (two-sided) if <span class="math inline">\(|T| &gt; z_{\alpha/2}\)</span>. Power against <span class="math inline">\(\mu_1\)</span>: <span class="math display">\[1-\beta = \Phi\!\left(-z_{\alpha/2} -
+  \frac{|\mu_1-\mu_0|}{\sigma/\sqrt{n}}\right).\]</span></p>
+</div>
+</div>
+</div>
+<div class="box warn">
+<p><span class="box-title">Common Misinterpretations</span> <span class="math inline">\(p &lt; 0.05\)</span> does <strong>not</strong> mean <span class="math inline">\(H_0\)</span> is false, nor that the effect is large or practically important. Report effect sizes and CIs alongside <span class="math inline">\(p\)</span>-values.</p>
+</div>
 </section>
-<section id="probability-mass-function-pmf" class="slide level2" data-number="0.4">
-<h2><span class="header-section-number">0.4</span> Probability Mass Function (PMF)</h2>
-<p>For a discrete RV: <span class="math inline">\(p(x) = P(X = x)\)</span></p>
-<p><strong>Requirements:</strong></p>
+<section id="lecture-summary-reading" class="slide level2" data-number="0.15">
+<h2><span class="header-section-number">0.15</span> Lecture Summary &amp; Reading</h2>
+<div class="cols cols-21">
+<section id="key-takeaways" class="col" data-number="0.15.1">
+<h3 data-number="0.15.1"><span class="header-section-number">0.15.1</span> Key takeaways</h3>
 <ul>
-<li class="fragment"><span class="math inline">\(p(x) \ge 0\)</span> for all <span class="math inline">\(x\)</span></li>
-<li class="fragment"><span class="math inline">\(\sum_{x} p(x) = 1\)</span></li>
-</ul>
-<div class="callout-example">
-<p>Fair die: <span class="math inline">\(p(x) = \tfrac{1}{6}\)</span> for <span class="math inline">\(x \in \{1,\ldots,6\}\)</span>, zero elsewhere.</p>
-</div>
-</section>
-<section id="probability-density-function-pdf" class="slide level2" data-number="0.5">
-<h2><span class="header-section-number">0.5</span> Probability Density Function (PDF)</h2>
-<p>For a continuous RV, <span class="math inline">\(P(X = x) = 0\)</span> for any single <span class="math inline">\(x\)</span>.</p>
-<p>Instead we use the PDF <span class="math inline">\(f(x)\)</span>: <span class="math display">\[P(a \le X \le b) = \int_a^b f(x)\,dx\]</span></p>
-<p><strong>Requirements:</strong></p>
-<ul>
-<li class="fragment"><span class="math inline">\(f(x) \ge 0\)</span><br>
-</li>
-<li class="fragment"><span class="math inline">\(\int_{-\infty}^{\infty} f(x)\,dx = 1\)</span></li>
-</ul>
-</section>
-<section id="cumulative-distribution-function" class="slide level2 small-slide" data-number="0.6">
-<h2><span class="header-section-number">0.6</span> Cumulative Distribution Function</h2>
-<p>The <strong>CDF</strong> works for <em>both</em> discrete and continuous RVs:</p>
-<p><span class="math display">\[F(x) = P(X \le x)\]</span></p>
-<p>Key properties:</p>
-<ul>
-<li class="fragment">Non-decreasing: <span class="math inline">\(x_1 &lt; x_2 \Rightarrow F(x_1) \le F(x_2)\)</span></li>
-<li class="fragment">Right-continuous</li>
-<li class="fragment"><span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span>, <span class="math inline">\(\lim_{x \to +\infty} F(x) = 1\)</span></li>
-</ul>
-<p>For continuous RVs: <span class="math inline">\(f(x) = F'(x)\)</span></p>
-</section>
-<section id="expectation" class="slide level2 section-slide" data-number="0.7">
-<h2><span class="header-section-number">0.7</span> Expectation</h2>
-</section>
-<section id="expectation-mean" class="slide level2" data-number="0.8">
-<h2><span class="header-section-number">0.8</span> Expectation (Mean)</h2>
-<p>The <strong>expected value</strong> (mean) of <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[\mu = E[X] = \begin{cases} \displaystyle\sum_x x\,p(x) &amp; \text{discrete} \\[8pt] \displaystyle\int_{-\infty}^{\infty} x\,f(x)\,dx &amp; \text{continuous} \end{cases}\]</span></p>
-<div class="callout-insight">
-<p><span class="math inline">\(E[X]\)</span> is the <span class="highlight">long-run average</span> — it may not be an attainable value of <span class="math inline">\(X\)</span>.</p>
-</div>
-</section>
-<section id="linearity-of-expectation" class="slide level2" data-number="0.9">
-<h2><span class="header-section-number">0.9</span> Linearity of Expectation</h2>
-<p>For constants <span class="math inline">\(a, b\)</span> and RVs <span class="math inline">\(X, Y\)</span>:</p>
-<p><span class="math display">\[E[aX + b] = a\,E[X] + b\]</span></p>
-<p><span class="math display">\[E[X + Y] = E[X] + E[Y] \quad (\text{always!})\]</span></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>The second equality holds <strong>regardless of dependence</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.<br>
-This makes expectation extraordinarily useful.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="variance-standard-deviation" class="slide level2" data-number="0.10">
-<h2><span class="header-section-number">0.10</span> Variance &amp; Standard Deviation</h2>
-<p><strong>Variance</strong> measures spread around the mean:</p>
-<p><span class="math display">\[\operatorname{Var}(X) = E\!\left[(X - \mu)^2\right] = E[X^2] - \mu^2\]</span></p>
-<p><strong>Standard deviation:</strong> <span class="math inline">\(\sigma = \sqrt{\operatorname{Var}(X)}\)</span> (same units as <span class="math inline">\(X\)</span>)</p>
-<p>Useful identity: <span class="math display">\[\operatorname{Var}(aX + b) = a^2\,\operatorname{Var}(X)\]</span></p>
-</section>
-<section id="higher-moments" class="slide level2 small-slide" data-number="0.11">
-<h2><span class="header-section-number">0.11</span> Higher Moments</h2>
-<p>The <span class="math inline">\(k\)</span>-th <strong>moment</strong> of <span class="math inline">\(X\)</span>: <span class="math inline">\(E[X^k]\)</span></p>
-<p>The <span class="math inline">\(k\)</span>-th <strong>central moment</strong>: <span class="math inline">\(E[(X - \mu)^k]\)</span></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Moment</th>
-<th>Symbol</th>
-<th>Measures</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1st central</td>
-<td><span class="math inline">\(0\)</span></td>
-<td>(always zero)</td>
-</tr>
-<tr class="even">
-<td>2nd central</td>
-<td><span class="math inline">\(\sigma^2\)</span></td>
-<td>Spread</td>
-</tr>
-<tr class="odd">
-<td>3rd standardised</td>
-<td>Skewness <span class="math inline">\(\gamma_1\)</span></td>
-<td>Asymmetry</td>
-</tr>
-<tr class="even">
-<td>4th standardised</td>
-<td>Kurtosis <span class="math inline">\(\gamma_2\)</span></td>
-<td>Tail heaviness</td>
-</tr>
-</tbody>
-</table>
-<div class="note">
-<p>Data scientists use skewness and kurtosis to detect non-Normality.</p>
-</div>
-</section>
-<section id="moment-generating-functions" class="slide level2" data-number="0.12">
-<h2><span class="header-section-number">0.12</span> Moment Generating Functions</h2>
-<p>The <strong>MGF</strong> of <span class="math inline">\(X\)</span>: <span class="math display">\[M_X(t) = E[e^{tX}]\]</span></p>
-<p>Why useful?</p>
-<ul>
-<li class="fragment"><span class="math inline">\(E[X^k] = M_X^{(k)}(0)\)</span> — moments by differentiation</li>
-<li class="fragment">If two RVs share an MGF, they share a distribution</li>
-<li class="fragment">Sums of independent RVs: <span class="math inline">\(M_{X+Y}(t) = M_X(t)\,M_Y(t)\)</span></li>
+<li>A <strong>random variable</strong> maps probability space to <span class="math inline">\(\mathbb{R}\)</span>; characterised by PMF/PDF and CDF.</li>
+<li><strong>Expectation</strong> is linear; <strong>variance</strong> follows its own algebra — understand these cold.</li>
+<li>Know the standard families (Gaussian, Poisson, Exponential, Beta) and their DS applications.</li>
+<li><strong>MLE</strong> maximises log-likelihood; for regular families it is consistent and asymptotically efficient.</li>
+<li>The <strong>Bias–Variance decomposition</strong> governs every learning algorithm’s error.</li>
+<li>The <strong>CLT</strong> justifies Gaussian approximations and Monte Carlo estimation; LLN ensures convergence.</li>
+<li><strong>Hypothesis testing</strong>: prespecify <span class="math inline">\(\alpha\)</span>, compute <span class="math inline">\(p\)</span>-value, do not confuse statistical with practical significance.</li>
 </ul>
 </section>
-<section id="joint-distributions" class="slide level2 section-slide" data-number="0.13">
-<h2><span class="header-section-number">0.13</span> Joint Distributions</h2>
-</section>
-<section id="joint-marginal-distributions" class="slide level2" data-number="0.14">
-<h2><span class="header-section-number">0.14</span> Joint &amp; Marginal Distributions</h2>
-<p>For two RVs <span class="math inline">\((X, Y)\)</span>:</p>
-<p><strong>Joint PMF/PDF:</strong> <span class="math inline">\(p(x, y)\)</span> or <span class="math inline">\(f(x, y)\)</span></p>
-<p><strong>Marginal distributions</strong> by summing/integrating out: <span class="math display">\[p_X(x) = \sum_y p(x,y), \qquad f_X(x) = \int f(x,y)\,dy\]</span></p>
-<p><strong>Conditional distribution:</strong> <span class="math display">\[f_{Y \mid X}(y \mid x) = \frac{f(x,y)}{f_X(x)}\]</span></p>
-</section>
-<section id="covariance-correlation" class="slide level2" data-number="0.15">
-<h2><span class="header-section-number">0.15</span> Covariance &amp; Correlation</h2>
-<p><span class="math display">\[\operatorname{Cov}(X, Y) = E[(X-\mu_X)(Y-\mu_Y)] = E[XY] - \mu_X\mu_Y\]</span></p>
-<p><strong>Pearson correlation</strong> (dimensionless, <span class="math inline">\(\in [-1, 1]\)</span>): <span class="math display">\[\rho_{XY} = \frac{\operatorname{Cov}(X,Y)}{\sigma_X\,\sigma_Y}\]</span></p>
-<div class="callout-question">
-<p>If <span class="math inline">\(\rho_{XY} = 0\)</span>, are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent? <span class="alert">Not necessarily!</span><br>
-Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, but not vice versa.</p>
+<div class="col">
+<div class="box def">
+<p><span class="box-title">Recommended Reading</span> - <em>All of Statistics</em> — Wasserman, Ch. 3–5 - <em>Pattern Recognition &amp; ML</em> — Bishop, Ch. 1–2 - <em>Elements of Statistical Learning</em> — HTF, Ch. 2–3 - <a href="https://docs.scipy.org/doc/scipy/reference/stats.html">scipy.stats docs</a></p>
 </div>
-</section>
-<section id="key-takeaways" class="slide level2" data-number="0.16">
-<h2><span class="header-section-number">0.16</span> Key Takeaways</h2>
-<ul>
-<li class="fragment">A RV maps outcomes to real numbers; described by <span class="highlight">PMF/PDF</span> and <span class="highlight">CDF</span></li>
-<li class="fragment"><span class="alert">Expectation</span> is a linear operator — powerfully simple</li>
-<li class="fragment"><span class="alert">Variance</span> measures spread; <span class="note">standard deviation</span> restores units</li>
-<li class="fragment"><span class="highlight">Covariance</span> captures linear association; <span class="highlight">correlation</span> standardises it</li>
-</ul>
-</section>
-<section id="next-lecture" class="slide level2" data-number="0.17">
-<h2><span class="header-section-number">0.17</span> Next Lecture</h2>
-<p><strong>Lecture 03 · Key Distributions</strong></p>
-<ul>
-<li class="fragment">Bernoulli, Binomial, and Poisson (discrete)</li>
-<li class="fragment">Uniform, Normal, and Exponential (continuous)</li>
-<li class="fragment">Relationships and data-science applications</li>
-</ul>
+<div class="box ex">
+<p><span class="box-title">Problem Set 5</span> 1. Derive the MLE for <span class="math inline">\(\lambda\)</span> in Poisson<span class="math inline">\((\lambda)\)</span>. 2. Show <span class="math inline">\(S^2 = \frac{1}{n-1}\sum(X_i-\bar X)^2\)</span> is unbiased for <span class="math inline">\(\sigma^2\)</span>. 3. Simulate the CLT for <span class="math inline">\(X \sim \text{Exp}(1)\)</span> with <span class="math inline">\(n \in \{5,30,100\}\)</span>. Plot histograms. 4. Implement a permutation test for the two-sample mean problem.</p>
+</div>
+</div>
+</div>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>Probability &amp; Statistics for Data Science · Lecture 5</p>
 </div>
 </div></div>
 
@@ -392,7 +628,6 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -414,8 +649,7 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true,"theme":"whiteboard","boardmarkerWidth":3,"chalkWidth":5},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -426,7 +660,7 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
+        controlsLayout: 'bottom-right',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -468,7 +702,7 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         center: false,
 
         // Enables touch navigation on devices with touch input
-        touch: false,
+        touch: true,
 
         // Loop the presentation
         loop: false,
@@ -541,10 +775,10 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
+        transitionSpeed: 'fast',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
@@ -561,15 +795,20 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 4.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -586,7 +825,7 @@ Independence <span class="math inline">\(\Rightarrow\)</span> zero correlation, 
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,
