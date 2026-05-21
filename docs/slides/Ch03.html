@@ -7,9 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-98f33259cc9912f9b44620857d989c8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
   <title>Probability &amp; Statistics for Data Science – Key Distributions</title>
@@ -100,7 +100,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-94b7e93cfe987f6e9c296d86a6692089.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-fc32d6143bc4cc786aa29462c6a2350e.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,9 +195,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <style>
-  .Definition {
-    --color1: #CC191433;
-    --color2: #CC1914;
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
+  }
+  .Corollary {
+    --color1: #c0c0c0;
+    --color2: #808080;
   }
   .Example {
     --color1: #e7b1b433;
@@ -207,17 +211,13 @@
     --color1: #b1b4e733;
     --color2: #b1b4e7;
   }
+  .Definition {
+    --color1: #CC191433;
+    --color2: #CC1914;
+  }
   .Remark {
     --color1: #00A04733;
     --color2: #00A047;
-  }
-  .Corollary {
-    --color1: #c0c0c0;
-    --color2: #808080;
-  }
-  .Note {
-    --color1: #70421433;
-    --color2: #704214;
   }
   </style>
 </head>
@@ -666,7 +666,7 @@ sample means are approximately Normal regardless of the population distribution.
         // specified using percentage units.
         width: 640,
 
-        height: 660,
+        height: 970,
 
         // Factor of the display size that should remain empty around the content
         margin: 0,

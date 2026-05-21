@@ -7,9 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-98f33259cc9912f9b44620857d989c8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/simpletextbox/simpletextbox.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-contrib/fancytextbox/fancytextbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.17">
 
   <meta name="author" content="Dr.&nbsp;A. Morgan">
@@ -102,7 +102,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0a6183fafa6fdf1a8d4106b9a62575d4.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-9a262ec5285b155a957453179fad9ccb.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -197,10 +197,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <style>
-  .Remark {
-    --color1: #00A04733;
-    --color2: #00A047;
-  }
   .Corollary {
     --color1: #c0c0c0;
     --color2: #808080;
@@ -209,10 +205,6 @@
     --color1: #e7b1b433;
     --color2: #e7b1b4;
   }
-  .Note {
-    --color1: #70421433;
-    --color2: #704214;
-  }
   .Definition {
     --color1: #CC191433;
     --color2: #CC1914;
@@ -220,6 +212,14 @@
   .Theorem {
     --color1: #b1b4e733;
     --color2: #b1b4e7;
+  }
+  .Remark {
+    --color1: #00A04733;
+    --color2: #00A047;
+  }
+  .Note {
+    --color1: #70421433;
+    --color2: #704214;
   }
   </style>
 </head>
@@ -492,7 +492,7 @@ Dr.&nbsp;A. Morgan
 <div class="cols cols-2">
 <section id="scipy.stats-numpy" class="col" data-number="0.13.1">
 <h3 data-number="0.13.1"><span class="header-section-number">0.13.1</span> scipy.stats &amp; numpy</h3>
-<div id="c251efe1" class="cell" data-execution_count="1">
+<div id="3328dcf3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -514,7 +514,7 @@ Dr.&nbsp;A. Morgan
 </section>
 <section id="mle-with-scipy" class="col" data-number="0.13.2">
 <h3 data-number="0.13.2"><span class="header-section-number">0.13.2</span> MLE with scipy</h3>
-<div id="7ba928f0" class="cell" data-execution_count="2">
+<div id="7af6d391" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a Gaussian to data (MLE)</span></span>
